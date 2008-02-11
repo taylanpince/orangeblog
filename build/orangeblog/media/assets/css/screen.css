@@ -127,7 +127,11 @@ textarea {
 }
 
 #SplashContainer h1 {
-    display: inline-block;
+    display: inline;
+}
+
+#SplashContainer p {
+    margin: 30px 0px 0px 0px;
 }
 
 /* @end */
