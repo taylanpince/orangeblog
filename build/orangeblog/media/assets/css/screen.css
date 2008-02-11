@@ -1,0 +1,109 @@
+
+/*	Style Sheet Information
+ *	Title: OrangeBlog screen styles
+ *	Project: OrangeBlog
+ *	Created: February 10, 2008
+ */
+
+/* @group Global */
+
+body {
+
+}
+
+/* @end */
+
+
+/* @group Headers */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	
+}
+
+/* @end */
+
+
+/* @group Text */
+
+p {
+	
+}
+
+blockquote {
+	
+}
+
+q {
+	
+}
+
+pre {
+	
+}
+
+code {
+	
+}
+
+hr {
+	
+}
+
+/* @end */
+
+
+/* @group Links */
+
+a,
+a:link,
+a:active,
+a:visited {
+	
+}
+
+a:hover {
+	
+}
+
+/* @end */
+
+
+/* @group Lists */
+
+ul {
+
+}
+
+li {
+	
+}
+
+ol {
+	
+}
+
+/* @end */
+
+
+/* @group Forms */
+
+form {
+	
+}
+
+label {
+	
+}
+
+input,
+select,
+textarea {
+	
+}
+
+/* @end */
