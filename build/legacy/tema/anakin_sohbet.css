@@ -1,0 +1,73 @@
+body,td,th,tr {
+	color: #CCCCCC;
+	font-family: verdana, trebuchet, sans-serif;
+	font-size: 10px;
+}
+body { 
+	background-color: #000000; 
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+.sohbetaciksira {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	10px;
+	font-weight: normal;
+	color:	#CCCCCC;
+}
+.sohbetkoyusira {
+	background-color: #333333;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	10px;
+	font-weight: normal;
+	color:	#CCCCCC;
+}
+a:link { 
+	color: #CCCCCC; 
+	font-size: 10px; 
+	font-weight: normal; 
+	text-decoration: underline; 
+}
+a:visited { 
+	color: #CCCCCC; 
+	font-size: 10px; 
+	font-weight: normal; 
+	text-decoration: underline; 
+}
+a:active {
+	color: #CCCCCC; 
+	font-size: 10px; 
+	font-weight: normal; 
+	text-decoration: underline; 
+}
+a:hover {
+	color: #CCCCCC;
+	font-size: 10px;
+	font-weight: normal;
+	background-color: #333333;
+	text-decoration: none;
+}
+.online {
+	display: inline-table;
+	color: #CCCCCC;
+	font-family: verdana, trebuchet, sans-serif;
+	font-size: 10px;
+	background-color: #3F0;
+	text-align: center;
+	border-top: #FFFFFF 1px solid;
+	border-left: #FFFFFF 1px solid;
+	border-right: #FFFFFF 1px solid;
+	border-bottom: #FFFFFF 1px solid;
+}
+.offline {
+	display: inline-table;
+	color: #CCCCCC;
+	font-family: verdana, trebuchet, sans-serif;
+	font-size: 10px;
+	background-color: #F00;
+	text-align: center;
+	border-top: #FFFFFF 1px solid;
+	border-left: #FFFFFF 1px solid;
+	border-right: #FFFFFF 1px solid;
+	border-bottom: #FFFFFF 1px solid;
+}

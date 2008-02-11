@@ -1,0 +1,358 @@
+/*
+	en bi sayfa bilgileri
+*/
+
+body,td,th,tr {
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+body { 
+	background-color: #000000;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+/*
+	baglantilar felan
+*/
+
+a:link { 
+	color: #249939;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:visited { 
+	color: #249939;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:active { 
+	color: #249939;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:hover { 
+	color: #1D7C2E;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+/*  
+    bilgi tasiyi div elemanlari (o ne be?)
+*/
+
+#menu {
+	width: 175px;
+	float: left;
+	font: 11px/12px Verdana, Arial, Helvetica, sans-serif;
+	padding-right: 10px;
+	text-align: right;
+	color: #FFFFFF;
+	padding-bottom: 30px;
+	border-right: 1px dotted #249939;
+}
+
+#menuright {
+	width: 175px;
+	float: top;
+	font: 11px/12px Verdana, Arial, Helvetica, sans-serif;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-left: 640px;
+	text-align: left;
+	color: #FFFFFF;
+	padding-bottom: 30px;
+	border-left: 1px dotted #249939;
+}
+
+#sinsi {
+	width: 280px;
+	float: top;
+	font: 11px/12px Verdana, Arial, Helvetica, sans-serif;
+	padding-right: 10px;
+	padding-left: 10px;
+	text-align: left;
+	color: #FFFFFF;
+	padding-bottom: 0px;
+	border-left: 1px dotted #249939;
+	border-right: 1px dotted #249939;
+}
+
+#content {
+	width: 420px;
+	float: left;
+	text-align: left;
+	margin-left: p0x;
+	margin-bottom: 60px;
+	padding-bottom: 30px;
+	padding-left: 10px;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+}
+
+#icerik {
+	width: 680px;
+	float: left;
+	text-align: left;
+	margin-left: p0x;
+	margin-bottom: 60px;
+	padding-bottom: 30px;
+	padding-left: 10px;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+}
+
+body>#content {
+	width: 420px;
+}
+
+.menuitems {
+	padding-top : 15px;
+	padding-bottom : 15px;
+	border-bottom : 1px dotted #249939;
+}
+
+.weblog {
+	padding-bottom: 2px;
+	border-bottom: 1px dotted #249939;
+}
+
+.spacer {
+	padding-bottom: 0px;
+	border-bottom: 1px dotted #249939;
+}
+
+.anketseysi {
+	background-color: #249939;
+}
+
+.sohbetKutu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	color:	#FFFFFF;
+	background-color: #000000;
+	border-top: #249939 1px solid; 
+	border-left: none; 
+	border-right: none; 
+	border-bottom: #249939 1px solid;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+/*  
+    butonlar mutonlar
+*/
+
+.kumanda {
+	color: #FFFFFF;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #249939 1px solid;
+	border-left: #249939 1px solid;
+	border-right: #249939 1px solid;
+	border-bottom: #249939 1px solid;
+	background-color: #249939;
+	cursor: hand;
+}
+
+.kumandahover {
+	color: #000000;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #249939 1px solid;
+	border-left: #249939 1px solid;
+	border-right: #249939 1px solid;
+	border-bottom: #249939 1px solid;
+	background-color: #249939;
+	cursor: hand;
+}
+
+.online {
+	color: #FFFFFF;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #249939 1px solid;
+	border-left: #249939 1px solid;
+	border-right: #249939 1px solid;
+	border-bottom: #249939 1px solid;
+	background-color: #3F0;
+	cursor: hand;
+}
+
+.onlinehover {
+	color: #000000;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #249939 1px solid;
+	border-left: #249939 1px solid;
+	border-right: #249939 1px solid;
+	border-bottom: #249939 1px solid;
+	background-color: #390;
+	cursor: hand;
+}
+
+.offline {
+	color: #FFFFFF;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #249939 1px solid;
+	border-left: #249939 1px solid;
+	border-right: #249939 1px solid;
+	border-bottom: #249939 1px solid;
+	background-color: #F00;
+	cursor: hand;
+}
+
+.offlinehover {
+	color: #000000;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #249939 1px solid;
+	border-left: #249939 1px solid;
+	border-right: #249939 1px solid;
+	border-bottom: #249939 1px solid;
+	background-color: #C30;
+	cursor: hand;
+}
+
+.aciksira {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	color:	#FFFFFF;
+}
+
+.koyusira {
+	background-color: #249939;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	color:	#FFFFFF;
+}
+
+/*  
+    pek cesitli fontlar
+*/
+
+.author {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	font-weight: normal;
+}
+
+H1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+H2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+H3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+H4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+H5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-weight: bold;
+}
+
+/*  
+    form elemanlari
+*/
+
+input {
+	font: bold 11px/12px Verdana, Arial, Helvetica, sans-serif;
+	border: 1px solid #249939;
+	color: black;
+	background-color: #FFFFFF;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+input.large {
+	width: 200px;
+}
+
+input:focus {
+	background-color : #FFFFFF;
+}
+
+input.button {
+	color: black;
+	background-color: #FFFFFF;
+}
+
+textarea {
+	border: 1px solid #249939;
+	margin-bottom: 10px;
+	color: black;
+	background-color: #FFFFFF;
+	font: 11px/16px Verdana, Arial, Helvetica, sans-serif;
+}
+
+textarea:focus {
+	background-color : #FFFFFF;
+}
+
+.pulldown {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	color:	#FFFFFF;
+	border-top: #249939 1px solid;
+	border-left: #249939 1px solid;
+	border-right: #249939 1px solid;
+	border-bottom: #249939 1px solid;
+}

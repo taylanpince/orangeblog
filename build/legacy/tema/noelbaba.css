@@ -1,0 +1,450 @@
+/*
+	en bi sayfa bilgileri
+*/
+
+body,td,th,tr {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+body { 
+	background-color: #EDEDED;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+/*
+	baglantilar felan
+*/
+
+a:link { 
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:visited { 
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:active { 
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+a:hover { 
+	color: #333333;
+	font-size: 11px;
+	font-weight: normal;
+	background-color: #E4B4B4;
+	text-decoration: none;
+}
+
+a.baslik:link { 
+	color: #AE1E23;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+a.baslik:visited { 
+	color: #AE1E23;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+a.baslik:active { 
+	color: #AE1E23;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+a.baslik:hover { 
+	color: #AE1E23;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #E4B4B4;
+	text-decoration: none;
+}
+
+/*  
+    bilgi tasiyi div elemanlari (o ne be?)
+*/
+
+#menu {
+	width: 175px;
+	float: left;
+	font: 11px/12px Verdana, Arial, Helvetica, sans-serif;
+	padding-right: 10px;
+	text-align: right;
+	color: #000000;
+	padding-bottom: 30px;
+	border-right: 1px dotted #AE1E23;
+}
+
+#menuright {
+	width: 175px;
+	float: top;
+	font: 11px/12px Verdana, Arial, Helvetica, sans-serif;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-left: 640px;
+	text-align: left;
+	color: #000000;
+	padding-bottom: 30px;
+	border-left: 1px dotted #AE1E23;
+}
+
+#sinsi {
+	width: 280px;
+	float: top;
+	font: 11px/12px Verdana, Arial, Helvetica, sans-serif;
+	padding-right: 10px;
+	padding-left: 10px;
+	text-align: left;
+	color: #000000;
+	padding-bottom: 0px;
+	border-left: 1px dotted #AE1E23;
+	border-right: 1px dotted #AE1E23;
+}
+
+#content {
+	width: 420px;
+	float: left;
+	text-align: left;
+	margin-left: p0x;
+	margin-bottom: 60px;
+	padding-bottom: 30px;
+	padding-left: 10px;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+}
+
+#icerik {
+	width: 680px;
+	float: left;
+	text-align: left;
+	margin-left: p0x;
+	margin-bottom: 60px;
+	padding-bottom: 30px;
+	padding-left: 10px;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+}
+
+body>#content {
+	width: 420px;
+}
+
+.bulusma {
+	border-right: 1px dotted #AE1E23;
+}
+
+.menuitems {
+	padding-top : 15px;
+	padding-bottom : 15px;
+	border-bottom : 1px dotted #AE1E23;
+}
+
+.weblog {
+	padding-bottom: 2px;
+	border-bottom: 1px dotted #AE1E23;
+}
+
+.spacer {
+	padding-bottom: 0px;
+	border-bottom: 1px dotted #AE1E23;
+}
+
+.anketseysi {
+	background-color: #AE1E23;
+	font-size: 10px;
+}
+
+.sohbetKutu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	color:	#000000;
+	background-color: #EDEDED;
+	border-top: #000000 1px solid; 
+	border-left: none; 
+	border-right: none; 
+	border-bottom: #000000 1px solid;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+/*  
+    butonlar mutonlar
+*/
+
+.yildizkutu {
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+}
+
+.kumanda {
+	color: #FFFFFF;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+	background-color: #AE1E23;
+	cursor: hand;
+}
+
+.kumandahover {
+	color: #000000;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+	background-color: #E4B4B4;
+	cursor: hand;
+}
+
+.online {
+	color: #000000;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+	background-color: #3F0;
+	cursor: hand;
+}
+
+.onlinehover {
+	color: #FFFFFF;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+	background-color: #390;
+	cursor: hand;
+}
+
+.offline {
+	color: #000000;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+	background-color: #F00;
+	cursor: hand;
+}
+
+.offlinehover {
+	color: #FFFFFF;
+	font-size: 10px;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+	background-color: #C30;
+	cursor: hand;
+}
+
+.aciksira {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	color:	#000000;
+}
+
+.koyusira {
+	background-color: #E4B4B4;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	color:	#000000;
+}
+
+.vecize {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	font-style: italic;
+	color:	#000000;
+}
+
+/*  
+    pek cesitli fontlar
+*/
+
+.author {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+}
+
+H1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #AE1E23;
+	font-weight: bold;
+}
+
+H2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #AE1E23;
+	font-weight: bold;
+}
+
+H3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #AE1E23;
+	font-weight: bold;
+}
+
+H4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #AE1E23;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+H5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #AE1E23;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-weight: bold;
+}
+
+/*  
+    kalender (bildigimiz takvim)
+*/
+
+.kalenderacik {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+}
+
+.kalenderkoyu {
+	background-color: #AE1E23;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+}
+
+/*  
+    form elemanlari
+*/
+
+input {
+	font: bold 11px/12px Verdana, Arial, Helvetica, sans-serif;
+	border: 1px solid #000000;
+	color: black;
+	background-color: #EDEDED;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+input.large {
+	width: 200px;
+}
+
+input:focus {
+	background-color : #EDEDED;
+}
+
+input.button {
+	color: black;
+	background-color: #EDEDED;
+}
+
+textarea {
+	border: 1px solid #000000;
+	margin-bottom: 10px;
+	color: black;
+	background-color: #EDEDED;
+	font: 11px/16px Verdana, Arial, Helvetica, sans-serif;
+}
+
+textarea:focus {
+	background-color : #EDEDED;
+}
+
+.whiteText {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.secmece {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+.pulldown {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	11px;
+	font-weight: normal;
+	color:	#000000;
+	border-top: #000000 1px solid;
+	border-left: #000000 1px solid;
+	border-right: #000000 1px solid;
+	border-bottom: #000000 1px solid;
+}

@@ -1,0 +1,67 @@
+<script language="JavaScript">
+
+function vote(pollid,choiceid)
+{
+	var url = "anket_oyla.php?pollid="+pollid+"&aid="+choiceid;
+	
+	return pencere(url,'oyla',350,450,50,50);
+}
+
+function viewresults(pollid)
+{
+	var url = "anket_sonuc.php?pollid="+pollid;
+	
+	return pencere(url,'sonuclar',350,450,50,50);
+}
+
+</script>
+
+<table width="100%" align="center" border="0" cellspacing="8" cellpadding="4">
+<tr valign="top">
+
+<td width="150" class="$row_colour">
+&gt; anket numarasý <b>$pollid</b><br>
+&gt; <a href="nabizolcer.php?nedir=anket&action=modify&pollid=$pollid">degistir</a><br>
+&gt; <a href="nabizolcer.php?nedir=anket&action=delete&pollid=$pollid" onclick="return confirm('$pollname silinsin mi?')">sil be</a><br>
+&gt; <a href="nabizolcer.php?nedir=anket&action=addchoice&pollid=$pollid">secenek ekle</a>
+</td>
+
+<td align="left" class="$row_colour">
+<table border="0" cellpadding="1" cellspacing="0">
+
+<form name="poll{$pollid}">
+<input type="hidden" name="haid" value="">
+
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="4">
+
+<tr>
+<td align="left"><h3>$pollname</h3></td>
+</tr>
+
+<tr>
+<td>$pollquestion</td>
+</tr>
+
+<tr>
+<td>$pollanswers</td>
+</tr>
+
+<tr>
+<td align="center" bgcolor="$pollbgcolor">
+<input type="button" name="Submit" value="aha!" onclick="vote('$pollid',document.poll{$pollid}.haid.value)">
+&nbsp;
+<input type="button" name="Submit2" value="sonuclar" onclick="viewresults('$pollid')"></td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</form>
+</table>
+
+</td>
+</tr>
+</table>

@@ -1,0 +1,48 @@
+body,td,th,tr {
+	color: #FFFFFF;
+	font-family: verdana, trebuchet, sans-serif;
+	font-size: 10px;
+}
+body { 
+	background-color: #000000; 
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+}
+.sohbetaciksira {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	10px;
+	font-weight: normal;
+	color:	#FFFFFF;
+}
+.sohbetkoyusira {
+	background-color: #249939;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:	10px;
+	font-weight: normal;
+	color:	#000000;
+}
+a:link { 
+	color: #FFFFFF; 
+	font-size: 10px; 
+	font-weight: normal; 
+	text-decoration: underline; 
+}
+a:visited { 
+	color: #FFFFFF; 
+	font-size: 10px; 
+	font-weight: normal; 
+	text-decoration: underline; 
+}
+a:active {
+	color: #FFFFFF; 
+	font-size: 10px; 
+	font-weight: normal; 
+	text-decoration: underline; 
+}
+a:hover {
+	color: #1D7C2E;
+	font-size: 10px;
+	font-weight: normal;
+	text-decoration: none;
+}
