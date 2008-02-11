@@ -8,7 +8,9 @@
 /* @group Global */
 
 body {
-
+    font: 11px "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: #FFF;
+    background: #B64926 url("../images/bg-page.png") top left repeat-x;
 }
 
 /* @end */
@@ -23,6 +25,14 @@ h4,
 h5,
 h6 {
 	
+}
+
+h1 {
+    font: 32px Georgia, "Century Schoolbook", Times, serif;
+    color: #FFF;
+    border-bottom: 4px solid #FFB03B;
+    padding: 0px 0px 5px 0px;
+    margin: 0px 0px 25px 0px;
 }
 
 /* @end */
@@ -63,7 +73,7 @@ a,
 a:link,
 a:active,
 a:visited {
-	
+    
 }
 
 a:hover {
@@ -104,6 +114,20 @@ input,
 select,
 textarea {
 	
+}
+
+/* @end */
+
+
+/* @group Splash */
+
+#SplashContainer {
+    width: 250px;
+    margin: 100px auto 0px auto;
+}
+
+#SplashContainer h1 {
+    display: inline-block;
 }
 
 /* @end */
