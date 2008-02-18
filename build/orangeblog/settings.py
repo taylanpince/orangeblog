@@ -23,6 +23,14 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 SECRET_KEY = 'v&v-_btxodw3-(p86j9l5g@w#^v8l8o$n*mvxxm@iiphrdgo%$'
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
+)
+
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
@@ -37,6 +45,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'orangeblog.urls'
 
+AUTH_PROFILE_MODULE = 'profiles.UserProfile'
+
 TEMPLATE_DIRS = (
     os.path.join(os.path.realpath(os.path.dirname(__file__)), 'templates/'),
 )
@@ -48,7 +58,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     
-    'orangeblog.posts',
+    'orangeblog.entries',
+    'orangeblog.comments',
+    'orangeblog.profiles',
 )
 
 try:

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>orangeblog</title>
+	
+	<style type="text/css" media="all">
+	    @import "{{ MEDIA_URL }}assets/css/reset.css";
+	    @import "{{ MEDIA_URL }}assets/css/screen.css";
+    </style>
+	
+	<script type="text/javascript" src="{{ MEDIA_URL }}assets/js/jquery.js"></script>
+	    
+</head>
+
+{% load post_utils %}
+
+<body>
+    
+    <div id="Container">
+        <div id="ContainerWrapper">
+            
+            <div id="Header">
+                <h1><a href="{% url home %}">orangeblog</a></h1>
+                <h3>evinizin neşe kaynağı</h3>
+            </div>
+        
+            <div id="Content">
+                
+                <div id="ContentColumn">
+                    {% block content %}{% endblock %}
+                </div>
+                
+                <div id="WideColumn">
+                    &nbsp;
+                </div>
+                
+                <div id="MiddleColumn">
+                    {% todays_entries %}
+                </div>
+                
+                <div id="SideColumn">
+                    {% category_links %}
+                </div>
+                
+            </div>
+
+            {% if debug %}
+            <div id="DebugBox">
+                <p>Total {{ sql_queries|length }} Quer{{ sql_queries|pluralize:"y,ies" }}</p>
+                <table id="DebugQueryTable" width="100%">
+                    <thead>
+                        <tr>
+                            <th width="10">#</th>
+                            <th>SQL</th>
+                            <th width="20">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for query in sql_queries %}
+                        <tr class="{% cycle odd,even %}">
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ query.sql|escape }}</td>
+                            <td>{{ query.time }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        
+        </div>
+    </div>
+    
+    <div id="Footer">
+        <div id="FooterWrapper">
+            &nbsp;
+        </div>
+    </div>
+
+</body>
+</html>
