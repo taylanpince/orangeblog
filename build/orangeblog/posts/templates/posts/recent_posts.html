@@ -1,0 +1,8 @@
+{% if entries %}
+<h3>son entriler</h3>
+<ul>
+{% for post in entries %}
+    <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}

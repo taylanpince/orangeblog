@@ -1,0 +1,10 @@
+<h3>günün menüsü</h3>
+{% if entries %}
+<ul>
+{% for post in entries %}
+    <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>daha yazmamış ki kimse... bühühühü</p>
+{% endif %}

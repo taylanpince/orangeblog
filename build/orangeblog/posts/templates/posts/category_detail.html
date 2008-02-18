@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ category.name }}{% if category.num_entries %} ({{ category.num_entries }}){% endif %}</h1>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul id="PostList">
+    {% for post in entries %}
+    <li>
+        <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+
+        {{ post.content|truncatewords_html:50|safe }}
+
+        <p class="more"><a href="{{ post.get_absolute_url }}">daha daha...</a></p>
+        <p class="info">
+            {% with post.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.get_name }}</a>, {% endwith %}
+            {{ post.post_date|date:"j.n.Y G:i" }}
+            {% if post.num_comments %}, <a href="{{ post.get_absolute_url }}#yorumlar" class="comments-link">{{ post.num_comments }}</a>{% endif %}
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
