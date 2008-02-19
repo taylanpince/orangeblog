@@ -9,7 +9,24 @@
 <p class="info">
     {% with post.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.get_name }}</a>, {% endwith %}
     {{ post.post_date|date:"j.n.Y G:i" }}
-    {% if post.num_comments %}, <a href="{{ post.get_absolute_url }}#yorumlar" class="comments-link">{{ post.num_comments }}</a>{% endif %}
 </p>
+
+{% if post.num_comments %}
+<h2>yorumlar</h2>
+
+<ul id="CommentList">
+    {% for comment in post.comment_set.all %}
+    <li>
+        {{ comment.content|safe }}
+        
+        <p class="info">
+            {% with comment.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.get_name }}</a>, {% endwith %}
+            {{ comment.post_date|date:"j.n.Y G:i" }}
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endif %}
 
 {% endblock %}

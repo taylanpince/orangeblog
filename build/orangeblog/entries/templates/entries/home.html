@@ -3,7 +3,7 @@
 {% block content %}
 
 <ul id="PostList">
-    {% for post in entries %}
+    {% for post in posts %}
     <li>
         <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
 
@@ -13,7 +13,7 @@
         <p class="info">
             {% with post.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.get_name }}</a>, {% endwith %}
             {{ post.post_date|date:"j.n.Y G:i" }}
-            {% if post.num_comments %}, <a href="{{ post.get_absolute_url }}#yorumlar" class="comments-link">{{ post.num_comments }}</a>{% endif %}
+            {% if post.num_comments %}, <a href="{{ post.get_absolute_url }}#yorumlar" class="comments-link">{{ post.num_comments }} yorum</a>{% endif %}
         </p>
     </li>
     {% endfor %}

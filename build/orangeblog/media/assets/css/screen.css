@@ -35,7 +35,10 @@ h1 {
 }
 
 h2 {
-    
+    font: 24px Georgia, "Century Schoolbook", Times, serif;
+    color: #FFF;
+    padding: 10px 0px 0px 0px;
+    margin: 0px 0px 25px 0px;
 }
 
 h3 {
@@ -71,6 +74,10 @@ p.more {
 
 p.more a {
     font-size: 11px;
+}
+
+span.small {
+    font: 10px Georgia, "Century Schoolbook", Times, serif;
 }
 
 blockquote {
@@ -272,15 +279,28 @@ ul#Navigation li {
     border-bottom: 1px solid #FFB03B;
 }
 
-#PostList li h1 a {
+#PostList li h1 a,
+#PostList li h2 a {
     color: #FFF;
     padding: 0px;
     border-bottom: 1px solid #ae8679;
 }
 
-#PostList li h1 a:hover {
+#PostList li h1 a:hover,
+#PostList li h2 a:hover {
     background-color: transparent;
     border-bottom: 1px solid #CCC;
+}
+
+/* @end */
+
+
+/* @group Comments */
+
+#CommentList li {
+    padding: 0px 0px 5px 0px;
+    margin: 0px 0px 20px 0px;
+    border-bottom: 1px solid #FFB03B;
 }
 
 /* @end */

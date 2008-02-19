@@ -2,7 +2,7 @@
 <h3>kategoriler</h3>
 <ul>
 {% for category in categories %}
-    <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+    <li><a href="{{ category.get_absolute_url }}">{{ category.name }}{% if category.num_entries %} <span class="small">({{ category.num_entries }})</span>{% endif %}</a></li>
 {% endfor %}
 </ul>
 {% endif %}

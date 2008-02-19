@@ -7,7 +7,7 @@ from entries.models import Post, Category
 register = template.Library()
 
 
-@register.inclusion_tag("entries/todays_entries.html")
+@register.inclusion_tag("entries/todays_posts.html")
 def todays_entries():
     """ Creates a list of today's entries """
     
@@ -17,7 +17,7 @@ def todays_entries():
     return {'entries': entries}
 
 
-@register.inclusion_tag("entries/recent_entries.html")
+@register.inclusion_tag("entries/recent_posts.html")
 def recent_entries():
     """ Creates a list of recent entries """
     

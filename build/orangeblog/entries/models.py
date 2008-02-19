@@ -44,7 +44,7 @@ class Category(models.Model):
         permissions = (("can_create_categories", "Can create blog categories"), )
 
     def __unicode__(self):
-        return "Category: %s" % self.name
+        return self.name
 
 
 class Post(models.Model):
@@ -52,7 +52,7 @@ class Post(models.Model):
     
     user = models.ForeignKey(User, verbose_name=_("Author"))
     title = models.CharField(_("Title"), max_length=100, unique=True)
-    slug = models.SlugField(_("Slug"), blank=True, editable=False)
+    slug = models.SlugField(_("Slug"), blank=True, editable=False, max_length=100)
     category = models.ForeignKey(Category, verbose_name=_("Category"))
     content = models.TextField(_("HTML Content"), blank=True, editable=False)
     content_md = models.TextField(_("Content"))
@@ -86,7 +86,7 @@ class Post(models.Model):
         super(Post, self).delete()
     
     class Admin:
-        list_display = ('title', 'category', 'post_date', 'save_date', 'public', )
+        list_display = ('title', 'category', 'user', 'post_date', 'save_date', 'public', )
         list_filter = ('category', 'public', )
         search_fields = ('title', 'content', )
         date_hierarchy = 'post_date'
@@ -98,7 +98,7 @@ class Post(models.Model):
         permissions = (("can_post_entries", "Can post blog entries"), )
     
     def __unicode__(self):
-        return "Post: %s" % self.title
+        return self.title
 
 
 class PostRating(models.Model):

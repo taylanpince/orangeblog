@@ -1,16 +1,24 @@
 from django.template import RequestContext
+from django.core.paginator import ObjectPaginator, InvalidPage
 from django.shortcuts import render_to_response, get_object_or_404
 
 from entries.models import Category, Post
 
 
-def home(request):
+def home(request, page=1):
     """ Home Page """
-    entries = Post.objects.all()[:10]
+    pager = ObjectPaginator(Post.objects.all(), 10)
+    
+    try:
+        posts = pager.get_page(int(page) - 1)
+    except:
+        posts = None
     
     return render_to_response("entries/home.html", {
-        "entries" : entries,
+        "posts" : posts,
+        "pager" : pager
     }, context_instance=RequestContext(request))
+
 
 def post_detail(request, slug):
     """ Post detail page """
@@ -20,6 +28,7 @@ def post_detail(request, slug):
         "post" : post,
     }, context_instance=RequestContext(request))
 
+
 def category_list(request):
     """ A list of available categories """
     categories = Category.objects.all()
@@ -28,10 +37,20 @@ def category_list(request):
         "categories" : categories,
     }, context_instance=RequestContext(request))
 
-def category_detail(request, slug):
+
+def category_detail(request, slug, page=1):
     """ Category detail page """
     category = get_object_or_404(Category.objects, slug=slug)
     
+    pager = ObjectPaginator(Post.objects.filter(category=category), 10)
+    
+    try:
+        posts = pager.get_page(int(page) - 1)
+    except:
+        posts = None
+    
     return render_to_response("entries/category_detail.html", {
         "category" : category,
+        "posts" : posts,
+        "pager" : pager
     }, context_instance=RequestContext(request))
