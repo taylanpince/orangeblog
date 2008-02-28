@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load comment_utils %}
+
 {% block content %}
 
 <h1>{{ post.title }}</h1>
@@ -7,12 +9,15 @@
 {{ post.content|safe }}
 
 <p class="info">
-    {% with post.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.get_name }}</a>, {% endwith %}
-    {{ post.post_date|date:"j.n.Y G:i" }}
+    {% with post.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.nickname }}</a>, {% endwith %}
+    {{ post.post_date|date:"j F Y, G:i" }}
 </p>
 
 {% if post.num_comments %}
-<h2>yorumlar</h2>
+
+<hr />
+
+<h2>yorumlar<a name="yorumlar" class="anchor"></a></h2>
 
 <ul id="CommentList">
     {% for comment in post.comment_set.all %}
@@ -20,13 +25,18 @@
         {{ comment.content|safe }}
         
         <p class="info">
-            {% with comment.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.get_name }}</a>, {% endwith %}
-            {{ comment.post_date|date:"j.n.Y G:i" }}
+            {% with comment.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.nickname }}</a>, {% endwith %}
+            {{ comment.post_date|date:"j F Y, G:i" }}
         </p>
     </li>
     {% endfor %}
 </ul>
 
+{% endif %}
+
+{% if user.is_authenticated %}
+<hr />
+{% comment_submit_form post %}
 {% endif %}
 
 {% endblock %}

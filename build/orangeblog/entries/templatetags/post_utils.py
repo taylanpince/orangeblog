@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django import template
 
+from entries.forms import PostTitleForm
 from entries.models import Post, Category
 
 register = template.Library()
@@ -33,3 +34,10 @@ def category_links():
     categories = Category.objects.all()
 
     return {'categories': categories}
+
+
+@register.inclusion_tag("entries/title_form.html")
+def post_title_form():
+    """ Renders the post title form """
+    
+    return {'form': PostTitleForm(prefix="PostTitleForm")}

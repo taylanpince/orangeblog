@@ -1,0 +1,14 @@
+<form id="UserLoginForm" method="post" action="{% url user_login %}">
+    {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}
+    {% if form.non_field_errors %}<p class="error">{{ form.non_field_errors|join:", " }}</p>{% endif %}
+    <ul class="form">
+        {% for field in form %}
+        <li>
+            {% if field.errors %}<p class="error">{{ field.errors|join:", " }}</p>{% endif %}
+            <label>{{ field.label }}</label>
+            {{ field }}
+        </li>
+        {% endfor %}
+        <li class="submit"><input type="submit" value="ortamlara akalım" /></li>
+    </ul>
+</form>

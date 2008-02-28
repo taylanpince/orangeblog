@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-27 22:37-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings.py:75
+msgid "Turkish"
+msgstr "türkçe"
+
+#: comments/models.py:15 entries/models.py:52
+msgid "Author"
+msgstr "yazar"
+
+#: comments/models.py:16 entries/models.py:94 entries/models.py:106
+#: entries/models.py:126
+msgid "Post"
+msgstr "entri"
+
+#: comments/models.py:17 entries/models.py:56
+msgid "HTML Content"
+msgstr "html entri"
+
+#: comments/models.py:18 entries/models.py:57
+msgid "Content"
+msgstr "entri"
+
+#: comments/models.py:19 entries/models.py:58
+msgid "Public"
+msgstr "yayında"
+
+#: comments/models.py:20 entries/models.py:59
+msgid "Post Date"
+msgstr "tarih"
+
+#: comments/models.py:21 entries/models.py:60
+msgid "Last Update"
+msgstr "son güncelleme"
+
+#: comments/models.py:43 comments/models.py:54
+msgid "Comment"
+msgstr "yorum"
+
+#: comments/models.py:44
+msgid "Comments"
+msgstr "yorumlar"
+
+#: comments/models.py:55 entries/models.py:107 entries/models.py:127
+#: profiles/models.py:13
+msgid "User"
+msgstr "kullanıcı"
+
+#: comments/models.py:56 entries/models.py:108
+msgid "Rating"
+msgstr ""
+
+#: comments/models.py:63
+msgid "Comment Rating"
+msgstr ""
+
+#: comments/models.py:64
+msgid "Comment Ratings"
+msgstr ""
+
+#: comments/views.py:28
+msgid "Your comment has been posted."
+msgstr "yorum eklendi, hadi yine iyisin."
+
+#: entries/forms.py:26
+msgid "This title is already taken."
+msgstr "bu başlık daha önce kullanılmış, olmadı."
+
+#: entries/models.py:14
+msgid "Name"
+msgstr "isim"
+
+#: entries/models.py:15 entries/models.py:54
+msgid "Slug"
+msgstr "kod isim"
+
+#: entries/models.py:16
+msgid "Weight"
+msgstr "ağırlık"
+
+#: entries/models.py:17
+msgid "Rated"
+msgstr ""
+
+#: entries/models.py:40 entries/models.py:55
+msgid "Category"
+msgstr "kategori"
+
+#: entries/models.py:41
+msgid "Categories"
+msgstr "kategoriler"
+
+#: entries/models.py:53
+msgid "Title"
+msgstr "başlık"
+
+#: entries/models.py:95
+msgid "Posts"
+msgstr "entriler"
+
+#: entries/models.py:115
+msgid "Post Rating"
+msgstr ""
+
+#: entries/models.py:116
+msgid "Post Ratings"
+msgstr ""
+
+#: entries/models.py:128
+msgid "Vote"
+msgstr ""
+
+#: entries/models.py:134
+msgid "Post Vote"
+msgstr ""
+
+#: entries/models.py:135
+msgid "Post Votes"
+msgstr ""
+
+#: entries/views.py:99
+msgid "Your entry has been posted."
+msgstr "entrin kaydedildi, gazan mübarek olsun."
+
+#: profiles/forms.py:8
+msgid "E-mail"
+msgstr "e-mail"
+
+#: profiles/forms.py:9
+msgid "Password"
+msgstr "şifre"
+
+#: profiles/forms.py:21 profiles/forms.py:31
+msgid ""
+"You could not be logged in with the e-mail address and password you "
+"specified."
+msgstr "girdiğin bilgilere sahip bir kullanıcı bulunamadı."
+
+#: profiles/forms.py:29
+msgid ""
+"This account is currently inactive. If you are a new member you will need to "
+"use the code in your activation email to activate your account."
+msgstr "hesabın henüz aktif değil, zırtapozluk yapma!"
+
+#: profiles/models.py:14
+msgid "Nickname"
+msgstr "isim"
+
+#: profiles/models.py:34
+msgid "User Profile"
+msgstr "kullanıcı profili"
+
+#: profiles/models.py:35
+msgid "User Profiles"
+msgstr "kullanıcı profilleri"
+
+#: profiles/views.py:45
+msgid "Welcome back!"
+msgstr "hoşgeldiniz efendim, sefalar getirdiniz..."

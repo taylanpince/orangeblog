@@ -1,0 +1,14 @@
+<h2>yorum yazasın<a name="yorum-ekle" class="anchor"></a></h2>
+
+<form id="CommentSubmitForm" method="post" action="{% url comment_submit post.slug %}">
+    {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}
+    <ul class="form">
+        {% for field in form %}
+        <li>
+            {% if field.errors %}<p class="error">{{ field.errors|join:", " }}</p>{% endif %}
+            {{ field }}
+        </li>
+        {% endfor %}
+        <li class="submit"><input type="submit" value="budur" /></li>
+    </ul>
+</form>

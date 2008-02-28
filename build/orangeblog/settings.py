@@ -21,6 +21,9 @@ MEDIA_ROOT = os.path.join(os.path.realpath(os.path.dirname(__file__)), 'media/')
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/admin/'
 
+LOGIN_URL = "/giris/"
+LOGIN_REDIRECT_URL = "/"
+
 SECRET_KEY = 'v&v-_btxodw3-(p86j9l5g@w#^v8l8o$n*mvxxm@iiphrdgo%$'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -39,6 +42,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
 )
@@ -61,6 +65,14 @@ INSTALLED_APPS = (
     'orangeblog.entries',
     'orangeblog.comments',
     'orangeblog.profiles',
+)
+
+ugettext = lambda s: s
+
+LANGUAGE_CODE = 'tr'
+
+LANGUAGES = (
+    ('tr', ugettext('Turkish')),
 )
 
 try:

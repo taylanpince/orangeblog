@@ -11,28 +11,63 @@
 	<style type="text/css" media="all">
 	    @import "{{ MEDIA_URL }}assets/css/reset.css";
 	    @import "{{ MEDIA_URL }}assets/css/screen.css";
+	    @import "{{ MEDIA_URL }}assets/css/messages.css";
     </style>
+    
+    <!--[if lt IE 7]><style type="text/css" media="all"> @import "{{ MEDIA_URL }}assets/css/ie.css"; </style><![endif]-->
 	
 	<script type="text/javascript" src="{{ MEDIA_URL }}assets/js/jquery.js"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}assets/js/messages.js"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}assets/js/orangeblog.js"></script>
+	<script type="text/javascript">
+	    document.media_url = "{{ MEDIA_URL }}";
+	</script>
 	    
 </head>
 
 {% load post_utils %}
+{% load profile_utils %}
 
 <body>
-    
+
     <div id="Container">
         <div id="ContainerWrapper">
             
             <div id="Header">
-                <h1><a href="{% url home %}">orangeblog</a></h1>
+                
+                {% if user.is_authenticated %}
+                
+                {% with user.get_profile as user_profile %}
+                <div id="UserProfileBox">
+                    <a href="{% url user_info user_profile.slug %}">{{ user_profile.nickname }}</a> (<a href="{% url user_logout %}">çıkacam</a>)
+                </div>
+                {% endwith %}
+                
+                {% post_title_form %}
+                
+                {% else %}
+                {% if not login_page %}{% user_login_form %}{% endif %}
+                {% endif %}
+                
                 <h3>evinizin neşe kaynağı</h3>
+                <h1><a href="{% url home %}">orangeblog</a></h1>
+                
             </div>
         
             <div id="Content">
                 
                 <div id="ContentColumn">
+                    
+                    {% if messages %}
+            	    <ul id="Messages">
+                	    {% for message in messages %}
+                        <li>{{ message }}</li>
+                	    {% endfor %}
+            	    </ul>
+            	    {% endif %}
+            	    
                     {% block content %}{% endblock %}
+                    
                 </div>
                 
                 <div id="WideColumn">

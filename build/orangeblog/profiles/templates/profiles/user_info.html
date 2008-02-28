@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ profile.nickname }}</h1>
+
+{% with profile.user as puser %}
+<ul class="bullet">
+    <li><strong>{{ puser.date_joined|date:"j F Y" }}</strong> tarihinde orangeblog'a katılmış, en son <strong>{{ puser.last_login|date:"j F Y" }}</strong> tarihinde giriş yapmış.</li>
+    <li>Toplam <strong>{{ profile.num_posts }}</strong> entri ve <strong>{{ profile.num_comments }}</strong> yorum yazmış.</li>
+    {% if profile.birth_date %}<li><strong>{{ profile.birth_date|date:"j F Y" }}</strong> tarihinde doğmuş.</li>{% endif %}
+</ul>
+{% endwith %}
+
+{% endblock %}

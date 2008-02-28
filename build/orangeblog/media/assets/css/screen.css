@@ -3,6 +3,7 @@
  *	Title: OrangeBlog screen styles
  *	Project: OrangeBlog
  *	Created: February 10, 2008
+ *  Author: Taylan Pince (taylanpince@gmail.com)
  */
 
 /* @group Global */
@@ -76,6 +77,14 @@ p.more a {
     font-size: 11px;
 }
 
+p.error {
+    color: #fff7b6;
+}
+
+ul.form li p.error {
+    margin-bottom: 2px;
+}
+
 span.small {
     font: 10px Georgia, "Century Schoolbook", Times, serif;
 }
@@ -89,7 +98,13 @@ q {
 }
 
 pre {
-	
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap !important;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	margin: 0px 0px 15px 0px;
+	font: 14px Georgia, "Century Schoolbook", Times, serif;
+	line-height: 22px;
 }
 
 code {
@@ -97,7 +112,16 @@ code {
 }
 
 hr {
-	
+	background-color: #FFB03B;
+	color: #FFB03B;
+	height: 1px;
+}
+
+div.hr {
+    font: 16px Georgia, "Century Schoolbook", Times, serif;
+    color: #FFB03B;
+    text-align: center;
+    letter-spacing: 12px;
 }
 
 /* @end */
@@ -120,6 +144,10 @@ a:hover {
 	background-color: #FFF0A5;
 }
 
+a.anchor {
+    visibility: hidden;
+}
+
 /* @end */
 
 
@@ -137,6 +165,16 @@ ol {
 	
 }
 
+ul.bullet {
+    padding: 10px 0px 0px 0px;
+}
+
+ul.bullet li {
+    padding: 0px 0px 0px 18px;
+    margin: 0px 0px 12px 0px;
+    background: transparent url("../images/bullet.png") 0px 5px no-repeat;
+}
+
 /* @end */
 
 
@@ -150,10 +188,75 @@ label {
 	
 }
 
-input,
-select,
-textarea {
-	
+input.text,
+textarea,
+select {
+    font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 4px;
+    border: 1px solid #FFB03B;
+}
+
+input.submit {
+    padding: 4px;
+    border: none;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #520000;
+    color: #FFF;
+}
+
+#Content ul.form li {
+    width: 570px;
+    clear: both;
+    overflow: hidden;
+    position: static;
+    margin: 0px 0px 18px 0px;
+}
+
+#Content ul.form li label {
+    float: left;
+    display: inline;
+    width: 100px;
+    margin: 0px 10px 0px 0px;
+    padding: 2px 0px 0px 0px;
+}
+
+#Content ul.form li input.text,
+#Content ul.form li input.file,
+#Content ul.form li textarea,
+#Content ul.form li select {
+    float: left;
+    display: inline;
+}
+
+#Content ul.form li textarea {
+    width: 450px;
+    height: 150px;
+}
+
+#Content ul.form li p.error {
+    clear: both;
+    padding-left: 110px;
+}
+
+#Content ul.form li.submit {
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 110px;
+}
+
+#CommentSubmitForm ul.form li textarea {
+    width: 570px;
+    height: 80px;
+}
+
+#CommentSubmitForm ul.form li.submit {
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+    text-align: right;
+}
+
+#CommentSubmitForm ul.form li p.error {
+    padding-left: 0px;
 }
 
 /* @end */
@@ -268,6 +371,71 @@ ul#Navigation li {
     display: inline;
 }
 
+#PostTitleForm {
+    position: absolute;
+    right: 0px;
+    bottom: 30px;
+    width: 350px;
+}
+
+#PostTitleForm li {
+    float: right;
+    display: inline;
+    margin: 0px 0px 0px 6px;
+}
+
+#PostTitleForm input.text,
+#PostTitleForm input.submit {
+    font-size: 16px;
+}
+
+#Header #UserLoginForm {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 292px;
+}
+
+#Header #UserLoginForm li {
+    float: left;
+    display: inline;
+    margin: 0px 0px 0px 6px;
+    width: 140px;
+}
+
+#Header #UserLoginForm li input.text {
+    width: 130px;
+}
+
+#Header #UserLoginForm li.submit {
+    float: none;
+    display: block;
+    text-align: right;
+    clear: both;
+    margin: 0px;
+    padding: 8px 0px 0px 0px;
+    width: 292px;
+}
+
+#Header #UserProfileBox {
+    font-size: 11px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 350px;
+    text-align: right;
+}
+
+#Header #UserProfileBox a {
+    font-size: 11px;
+    border: none;
+    color: #CCC;
+}
+
+#Header #UserProfileBox a:hover {
+    color: #333;
+}
+
 /* @end */
 
 
@@ -279,10 +447,14 @@ ul#Navigation li {
     border-bottom: 1px solid #FFB03B;
 }
 
+#PostList li.last-child {
+    border: none;
+}
+
 #PostList li h1 a,
 #PostList li h2 a {
     color: #FFF;
-    padding: 0px;
+    padding: 0px 0px 4px 0px;
     border-bottom: 1px solid #ae8679;
 }
 
@@ -301,6 +473,10 @@ ul#Navigation li {
     padding: 0px 0px 5px 0px;
     margin: 0px 0px 20px 0px;
     border-bottom: 1px solid #FFB03B;
+}
+
+#CommentList li.last-child {
+    border: none;
 }
 
 /* @end */

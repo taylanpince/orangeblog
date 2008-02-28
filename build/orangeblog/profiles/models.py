@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
+from profiles.managers import ProfileManager
+
 
 class UserProfile(models.Model):
     """ Holds extra profile information for users """
@@ -13,21 +15,15 @@ class UserProfile(models.Model):
     slug = models.SlugField(blank=True, editable=False)
     birth_date = models.DateField(blank=True, null=True)
     
-    def get_name(self):
-        """ Gets the user's name or username """
-        if self.nickname:
-            return self.nickname
-        else:
-            return self.user.username
+    admin_objects = models.Manager()
+    objects = ProfileManager()
     
     @permalink
     def get_absolute_url(self):
         return ('user_info', (), {'slug': self.slug})
     
     def save(self):
-        if self.nickname:
-            self.slug = slugify(self.nickname)
-        
+        self.slug = slugify(self.nickname)
         super(UserProfile, self).save()
     
     class Admin:

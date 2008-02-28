@@ -1,0 +1,8 @@
+<form id="PostTitleForm" action="{% url get_or_submit %}" method="post">
+    <ul class="form">
+        <li class="submit"><input type="submit" value="getür" /></li>
+        {% for field in form %}
+        <li>{{ field }}</li> 
+        {% endfor %}
+    </ul>
+</form>

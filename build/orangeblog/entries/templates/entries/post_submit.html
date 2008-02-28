@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>yeni entri</h1>
+
+<form id="PostSubmitForm" method="post" action="{% url post_submit post_slug %}">
+    {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}
+    {% if form.non_field_errors %}<p class="error">{{ form.non_field_errors|join:", "|lower }}</p>{% endif %}
+    <ul class="form">
+        {% for field in form %}
+        <li>
+            {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
+            <label>{{ field.label|lower }}</label>
+            {{ field }}
+        </li>
+        {% endfor %}
+        <li class="submit"><input type="submit" value="yolla gitsin" /></li>
+    </ul>
+</form>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+
+/*	Style Sheet Information
+ *	Title: Messages Styles
+ *	Project: Messages
+ *	Created: February 23, 2008
+ *  Author: Taylan Pince (taylanpince@gmail.com)
+ */
+
+/* @group Messages */
+
+#CoreMessageList {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+}
+
+#CoreMessageList li {
+    width: 200px;
+    height: 75px;
+    background: transparent url("../images/message-done.png") top left no-repeat;
+    color: #FFF;
+    padding: 15px 15px 20px 90px;
+    margin: 0px 0px 10px 0px;
+}
+
+#CoreMessageList li.error {
+    background: transparent url("../images/message-error.png") top left no-repeat;
+}
+
+/* @end */
