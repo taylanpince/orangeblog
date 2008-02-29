@@ -1,0 +1,25 @@
+{% if pager.is_paginated %}
+
+{% load pagination_utils %}
+
+<div id="Pagination">
+    
+    {% if pager.has_previous %}<a href="{% paginate_url pager.url pager.previous %}">&laquo; önceki</a>{% endif %}
+
+    {% for p in page_range %}
+    {% ifequal p "." %}
+    	<span>...</span>
+    {% else %}
+    	{% ifequal pager.page p %}
+    	<a href="{% paginate_url pager.url p %}" class="active">{{ p }}</a>
+    	{% else %}
+    	<a href="{% paginate_url pager.url p %}">{{ p }}</a>
+    	{% endifequal %}
+    {% endifequal %}
+    {% endfor %}
+
+    {% if pager.has_next %}<a href="{% paginate_url pager.url pager.next %}">sonraki &raquo;</a>{% endif %}
+
+</div>
+
+{% endif %}

@@ -1,0 +1,8 @@
+{% if comments %}
+<h3>son yorumlar</h3>
+<ul>
+{% for comment in comments %}
+    <li><a href="{{ comment.get_absolute_url }}">{{ comment.title }} <span class="small">({{ comment.author }})</span></a></li>
+{% endfor %}
+</ul>
+{% endif %}

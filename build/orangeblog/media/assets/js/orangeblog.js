@@ -35,6 +35,10 @@ orangeBlog = {
 					$(this).find("#id_PostTitleForm-title").focus();
 					core.messages.show_message("başlık girsene önce evladım...", true);
 					return false;
+				} else if ($(this).find("#id_PostTitleForm-title").val().length < 3) {
+					$(this).find("#id_PostTitleForm-title").focus();
+					core.messages.show_message("3 karakterden kısa başlık olur mu, bre mendebur!", true);
+					return false;
 				} else {
 					return true;
 				}

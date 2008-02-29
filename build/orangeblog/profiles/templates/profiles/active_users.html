@@ -1,0 +1,8 @@
+{% if profiles %}
+<h3>kim kim?</h3>
+<ul>
+{% for profile in profiles %}
+    <li><a href="{{ profile.get_absolute_url }}">{{ profile.nickname }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}

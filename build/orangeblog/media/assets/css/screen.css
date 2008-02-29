@@ -98,6 +98,10 @@ q {
 }
 
 pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap !important;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
 	margin: 0px 0px 15px 0px;
 	font: 14px Georgia, "Century Schoolbook", Times, serif;
 	line-height: 22px;
@@ -310,6 +314,7 @@ input.submit {
     display: inline;
     width: 580px;
     padding: 0px 20px 0px 0px;
+    overflow-x: hidden;
 }
 
 #WideColumn {
@@ -494,6 +499,13 @@ ul#Navigation li {
 
 /* @group Side Columns */
 
+#MiddleColumn ul,
+#SideColumn ul,
+#MiddleColumn p,
+#SideColumn p {
+    margin: 0px 0px 35px 0px;
+}
+
 #MiddleColumn li,
 #SideColumn li {
     margin: 0px 0px 5px 0px;
@@ -528,6 +540,10 @@ ul#Navigation li {
 /* @group Debugger */
 
 #DebugBox {
+    
+}
+
+#DebugQueryTable {
     display: none;
 }
 
@@ -572,6 +588,29 @@ ul#Navigation li {
 
 #FooterColumns ul.bullet li {
     background-image: url("../images/bullet-white.png");
+}
+
+/* @end */
+
+
+/* @group Pagination */
+
+#Pagination {
+    padding: 15px 0px 5px 0px;
+    border-top: 1px solid #FFB03B;
+    text-align: right;
+}
+
+#Pagination a {
+    margin-right: 1px;
+    margin-left: 1px;
+}
+
+#Pagination a.active {
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: #FFF0A5;
+    color: #333;
 }
 
 /* @end */

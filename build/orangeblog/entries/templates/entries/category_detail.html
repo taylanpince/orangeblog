@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load pagination_utils %}
+
 {% block rss %}<link rel="alternate" href="{% url rss_feeds category.get_rss_url %}" type="application/rss+xml" title="{{ category.name }} kategorisindeki son entriler" />{% endblock %}
 
 {% block content %}
@@ -23,6 +25,9 @@
     </li>
     {% endfor %}
 </ul>
+
+{% paginate pager %}
+
 {% else %}
 <p>bu kategoriye daha kimse yazmamış, yazık...</p>
 {% endif %}

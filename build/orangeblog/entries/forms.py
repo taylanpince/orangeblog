@@ -8,14 +8,17 @@ from entries.models import Post
 class PostTitleForm(forms.Form):
     """ Used to submit a title value """
     
-    title = forms.CharField(max_length=100)
+    title = forms.CharField(max_length=100, min_length=3)
     
     slug = None
     
     def clean(self):
-        self.slug = slugify(self.cleaned_data["title"])
+        if self._errors:
+            return
+        else:
+            self.slug = slugify(self.cleaned_data["title"])
         
-        return self.cleaned_data
+            return self.cleaned_data
 
 
 class PostSubmitForm(forms.ModelForm):

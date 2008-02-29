@@ -47,6 +47,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
+    'orangeblog.profiles.middleware.UserProfileActivityMiddleware',
 )
 
 ROOT_URLCONF = 'orangeblog.urls'
@@ -67,6 +68,7 @@ INSTALLED_APPS = (
     'orangeblog.entries',
     'orangeblog.comments',
     'orangeblog.profiles',
+    'orangeblog.tools',
 )
 
 ugettext = lambda s: s

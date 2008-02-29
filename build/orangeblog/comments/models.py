@@ -24,9 +24,8 @@ class Comment(models.Model):
     admin_objects = models.Manager()
     objects = CommentManager()
     
-    @permalink
     def get_absolute_url(self):
-        return ('post_detail', (), {'slug': self.post.slug})
+        return "%s#yorum-%s" % (self.post.get_absolute_url(), self.id)
     
     def save(self):
         self.content = markdown(mark_lookups(self.content_md))

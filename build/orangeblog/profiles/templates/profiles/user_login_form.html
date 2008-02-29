@@ -4,8 +4,8 @@
     <ul class="form">
         {% for field in form %}
         <li>
-            {% if field.errors %}<p class="error">{{ field.errors|join:", " }}</p>{% endif %}
-            <label>{{ field.label }}</label>
+            {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
+            <label>{{ field.label|lower }}</label>
             {{ field }}
         </li>
         {% endfor %}

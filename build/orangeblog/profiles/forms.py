@@ -5,7 +5,7 @@ from django.utils.translation import ugettext as _
 
 
 class UserLoginForm(forms.Form):
-    email = forms.EmailField(label=_("E-mail"), required=True)
+    username = forms.CharField(label=_("Username"), required=True)
     password = forms.CharField(label=_("Password"), required=True, widget=forms.PasswordInput())
 
     user = None
@@ -16,11 +16,11 @@ class UserLoginForm(forms.Form):
             return
         else:
             try:
-                username = User.objects.get(email=self.cleaned_data['email']).username
+                user = User.objects.get(username=self.cleaned_data['username'])
             except User.DoesNotExist:
                 raise forms.ValidationError(_("You could not be logged in with the e-mail address and password you specified."))
 
-            user = authenticate(username=username, password=self.cleaned_data['password'])
+            user = authenticate(username=self.cleaned_data['username'], password=self.cleaned_data['password'])
             
             if user is not None:
                 if user.is_active:

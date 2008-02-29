@@ -31,6 +31,7 @@
 
 {% load post_utils %}
 {% load profile_utils %}
+{% load comment_utils %}
 
 <body>
 
@@ -80,37 +81,15 @@
                 
                 <div id="MiddleColumn">
                     {% todays_entries %}
+                    {% recent_comments %}
                 </div>
                 
                 <div id="SideColumn">
                     {% category_links %}
+                    {% active_users %}
                 </div>
                 
             </div>
-
-            {% if debug %}
-            <div id="DebugBox">
-                <p>Total {{ sql_queries|length }} Quer{{ sql_queries|pluralize:"y,ies" }}</p>
-                <table id="DebugQueryTable" width="100%">
-                    <thead>
-                        <tr>
-                            <th width="10">#</th>
-                            <th>SQL</th>
-                            <th width="20">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for query in sql_queries %}
-                        <tr class="{% cycle odd,even %}">
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{ query.sql|escape }}</td>
-                            <td>{{ query.time }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            {% endif %}
         
         </div>
     </div>
@@ -134,6 +113,36 @@
             </li>
         </ul>
     </div>
-
+    {% comment %}
+    {% if debug %}
+    {% load sql_utils %}
+    <script type="text/javascript">
+        $(function() {
+            core.messages.show_message("Total {{ sql_queries|length }} Quer{{ sql_queries|pluralize:"y,ies" }}, execution time {% total_query_time sql_queries %} seconds");
+        });
+    </script>
+    <table id="DebugQueryTable" style="display: none;">
+        <col width="1"></col>
+        <col></col>
+        <col width="1"></col>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">SQL</th>
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for query in sql_queries %}
+            <tr class="{% cycle odd,even %}">
+                <td>{{ forloop.counter }}</td>
+                <td class="sql-code">{{ query.sql|escape }}</td>
+                <td>{{ query.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    {% endcomment %}
 </body>
 </html>

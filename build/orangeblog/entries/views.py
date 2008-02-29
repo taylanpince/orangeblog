@@ -11,17 +11,22 @@ from django.shortcuts import render_to_response, get_object_or_404
 
 from tools.utils import unslugify
 from entries.models import Category, Post
+from tools.pagination import make_url_pattern
 from entries.forms import PostTitleForm, PostSubmitForm
 
 
 def home(request):
     """ Home Page """
+    
     pager = ObjectPaginator(Post.objects.all(), 10)
+    pager.page = int(request.GET.get("sayfa", 1))
     
     try:
-        posts = pager.get_page(int(request.GET.get("sayfa", 1)) - 1)
+        posts = pager.get_page(pager.page - 1)
     except:
         posts = None
+    
+    pager.url = make_url_pattern(reverse("home"), request.GET)
     
     return render_to_response("entries/home.html", {
         "posts" : posts,
@@ -31,6 +36,7 @@ def home(request):
 
 def post_detail(request, slug):
     """ Post detail page """
+    
     post = get_object_or_404(Post.objects, slug=slug)
     
     return render_to_response("entries/post_detail.html", {
@@ -40,6 +46,7 @@ def post_detail(request, slug):
 
 def category_list(request):
     """ A list of available categories """
+    
     categories = Category.objects.all()
     
     return render_to_response("entries/category_list.html", {
@@ -49,14 +56,18 @@ def category_list(request):
 
 def category_detail(request, slug):
     """ Category detail page """
+    
     category = get_object_or_404(Category.objects, slug=slug)
     
     pager = ObjectPaginator(Post.objects.filter(category=category), 10)
+    pager.page = int(request.GET.get("sayfa", 1))
     
     try:
-        posts = pager.get_page(int(request.GET.get("sayfa", 1)) - 1)
+        posts = pager.get_page(pager.page - 1)
     except:
         posts = None
+    
+    pager.url = make_url_pattern(reverse("home"), request.GET)
     
     return render_to_response("entries/category_detail.html", {
         "category" : category,

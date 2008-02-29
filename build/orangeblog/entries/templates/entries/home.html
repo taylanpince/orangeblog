@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load pagination_utils %}
+
 {% block content %}
 
 <ul id="PostList">
@@ -18,5 +20,7 @@
     </li>
     {% endfor %}
 </ul>
+
+{% paginate pager %}
 
 {% endblock %}

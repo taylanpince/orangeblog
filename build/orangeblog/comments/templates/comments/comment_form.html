@@ -6,7 +6,7 @@
     <ul class="form">
         {% for field in form %}
         <li>
-            {% if field.errors %}<p class="error">{{ field.errors|join:", " }}</p>{% endif %}
+            {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
             {{ field }}
         </li>
         {% endfor %}

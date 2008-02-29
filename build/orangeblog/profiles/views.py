@@ -29,6 +29,10 @@ def user_logout(request):
     else:
         next = reverse('home')
     
+    profile = request.user.get_profile()
+    profile.last_active = None
+    profile.save()
+    
     logout(request)
     
     return HttpResponseRedirect(next)

@@ -13,7 +13,9 @@ class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True, verbose_name=_("User"))
     nickname = models.CharField(_("Nickname"), max_length=40, unique=True)
     slug = models.SlugField(blank=True, editable=False)
-    birth_date = models.DateField(blank=True, null=True)
+    birth_date = models.DateField(_("Date of Birth"), blank=True, null=True)
+    avatar = models.ImageField(_("Avatar"), upload_to="files/profiles", blank=True, null=True)
+    last_active = models.DateTimeField(blank=True, null=True, editable=False)
     
     admin_objects = models.Manager()
     objects = ProfileManager()

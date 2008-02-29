@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-27 22:37-0500\n"
+"POT-Creation-Date: 2008-02-29 15:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,61 +16,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:75
+#: settings.py:79
 msgid "Turkish"
 msgstr "türkçe"
 
-#: comments/models.py:15 entries/models.py:52
+#: comments/models.py:16 entries/models.py:57
 msgid "Author"
 msgstr "yazar"
 
-#: comments/models.py:16 entries/models.py:94 entries/models.py:106
-#: entries/models.py:126
+#: comments/models.py:17 entries/models.py:102 entries/models.py:114
+#: entries/models.py:134
 msgid "Post"
 msgstr "entri"
 
-#: comments/models.py:17 entries/models.py:56
+#: comments/models.py:18 entries/models.py:61
 msgid "HTML Content"
 msgstr "html entri"
 
-#: comments/models.py:18 entries/models.py:57
+#: comments/models.py:19 entries/models.py:62
 msgid "Content"
 msgstr "entri"
 
-#: comments/models.py:19 entries/models.py:58
+#: comments/models.py:20 entries/models.py:63
 msgid "Public"
 msgstr "yayında"
 
-#: comments/models.py:20 entries/models.py:59
+#: comments/models.py:21 entries/models.py:64
 msgid "Post Date"
 msgstr "tarih"
 
-#: comments/models.py:21 entries/models.py:60
+#: comments/models.py:22 entries/models.py:65
 msgid "Last Update"
 msgstr "son güncelleme"
 
-#: comments/models.py:43 comments/models.py:54
+#: comments/models.py:48 comments/models.py:59
 msgid "Comment"
 msgstr "yorum"
 
-#: comments/models.py:44
+#: comments/models.py:49
 msgid "Comments"
 msgstr "yorumlar"
 
-#: comments/models.py:55 entries/models.py:107 entries/models.py:127
+#: comments/models.py:60 entries/models.py:115 entries/models.py:135
 #: profiles/models.py:13
 msgid "User"
 msgstr "kullanıcı"
 
-#: comments/models.py:56 entries/models.py:108
+#: comments/models.py:61 entries/models.py:116
 msgid "Rating"
 msgstr ""
 
-#: comments/models.py:63
+#: comments/models.py:68
 msgid "Comment Rating"
 msgstr ""
 
-#: comments/models.py:64
+#: comments/models.py:69
 msgid "Comment Ratings"
 msgstr ""
 
@@ -78,69 +78,70 @@ msgstr ""
 msgid "Your comment has been posted."
 msgstr "yorum eklendi, hadi yine iyisin."
 
-#: entries/forms.py:26
+#: entries/forms.py:30
 msgid "This title is already taken."
 msgstr "bu başlık daha önce kullanılmış, olmadı."
 
-#: entries/models.py:14
+#: entries/models.py:16
 msgid "Name"
 msgstr "isim"
 
-#: entries/models.py:15 entries/models.py:54
+#: entries/models.py:17 entries/models.py:59
 msgid "Slug"
 msgstr "kod isim"
 
-#: entries/models.py:16
+#: entries/models.py:18
 msgid "Weight"
 msgstr "ağırlık"
 
-#: entries/models.py:17
+#: entries/models.py:19
 msgid "Rated"
 msgstr ""
 
-#: entries/models.py:40 entries/models.py:55
+#: entries/models.py:45 entries/models.py:60
 msgid "Category"
 msgstr "kategori"
 
-#: entries/models.py:41
+#: entries/models.py:46
 msgid "Categories"
 msgstr "kategoriler"
 
-#: entries/models.py:53
+#: entries/models.py:58
 msgid "Title"
 msgstr "başlık"
 
-#: entries/models.py:95
+#: entries/models.py:103
 msgid "Posts"
 msgstr "entriler"
 
-#: entries/models.py:115
+#: entries/models.py:123
 msgid "Post Rating"
 msgstr ""
 
-#: entries/models.py:116
+#: entries/models.py:124
 msgid "Post Ratings"
 msgstr ""
 
-#: entries/models.py:128
+#: entries/models.py:136
 msgid "Vote"
 msgstr ""
 
-#: entries/models.py:134
+#: entries/models.py:142
 msgid "Post Vote"
 msgstr ""
 
-#: entries/models.py:135
+#: entries/models.py:143
 msgid "Post Votes"
 msgstr ""
 
-#: entries/views.py:99
+#: entries/views.py:117
 msgid "Your entry has been posted."
 msgstr "entrin kaydedildi, gazan mübarek olsun."
 
 #: profiles/forms.py:8
-msgid "E-mail"
-msgstr "e-mail"
+#, fuzzy
+msgid "Username"
+msgstr "kullanıcı"
 
 #: profiles/forms.py:9
 msgid "Password"
@@ -162,14 +163,25 @@ msgstr "hesabın henüz aktif değil, zırtapozluk yapma!"
 msgid "Nickname"
 msgstr "isim"
 
-#: profiles/models.py:34
+#: profiles/models.py:16
+msgid "Date of Birth"
+msgstr "doğum tarihi"
+
+#: profiles/models.py:17
+msgid "Avatar"
+msgstr "fotoğraf"
+
+#: profiles/models.py:36
 msgid "User Profile"
 msgstr "kullanıcı profili"
 
-#: profiles/models.py:35
+#: profiles/models.py:37
 msgid "User Profiles"
 msgstr "kullanıcı profilleri"
 
 #: profiles/views.py:45
 msgid "Welcome back!"
 msgstr "hoşgeldiniz efendim, sefalar getirdiniz..."
+
+#~ msgid "E-mail"
+#~ msgstr "e-mail"
