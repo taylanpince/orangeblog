@@ -4,6 +4,17 @@
 
 <h1>yeni entri</h1>
 
+{% if related_posts %}
+<p>öyle bi başlık yok arkadaşım, kandırmışlar seni. ama şöyle bişeyler var istersen, aha al.</p>
+<ul class="bullet">
+    {% for related_post in related_posts|slice:":10" %}
+    <li><a href="{% url post_detail related_post.slug %}">{{ related_post.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<p>ben yazacam bunu diyorsan, buyur al dükkan senin.</p>
+
 <form id="PostSubmitForm" method="post" action="{% url post_submit post_slug %}">
     {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}
     {% if form.non_field_errors %}<p class="error">{{ form.non_field_errors|join:", "|lower }}</p>{% endif %}

@@ -2,6 +2,8 @@
 
 {% load comment_utils %}
 
+{% block rss %}<link rel="alternate" href="{% url rss_feeds post.get_rss_url %}" type="application/rss+xml" title="{{ post.title }} entrisindeki yorumlar" />{% endblock %}
+
 {% block content %}
 
 <h1>{{ post.title }}</h1>
@@ -17,11 +19,13 @@
 
 <hr />
 
-<h2>yorumlar<a name="yorumlar" class="anchor"></a></h2>
+<a name="yorumlar" class="anchor"></a>
+<h2>yorumlar</h2>
 
 <ul id="CommentList">
     {% for comment in post.comment_set.all %}
     <li>
+        <a name="yorum-{{ comment.id }}" class="anchor"></a>
         {{ comment.content|safe }}
         
         <p class="info">

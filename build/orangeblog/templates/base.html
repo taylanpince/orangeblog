@@ -4,10 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
 	<title>orangeblog</title>
 	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<link rel="alternate" href="{% url rss_feeds "son-entriler" %}" type="application/rss+xml" title="son entriler" />
+	<link rel="alternate" href="{% url rss_feeds "son-yorumlar" %}" type="application/rss+xml" title="son yorumlar" />
+	{% block rss %}{% endblock %}
+
 	<style type="text/css" media="all">
 	    @import "{{ MEDIA_URL }}assets/css/reset.css";
 	    @import "{{ MEDIA_URL }}assets/css/screen.css";
@@ -112,21 +116,23 @@
     </div>
     
     <div id="Footer">
-        <div id="FooterWrapper">
-            
-            <div id="FooterColumnLeft">
-                
-            </div>
-            
-            <div id="FooterColumnMiddle">
-                
-            </div>
-            
-            <div id="FooterColumnRight">
-                
-            </div>
-            
-        </div>
+        <ul id="FooterColumns">
+            <li>
+                <h1 class="rss">RSS</h1>
+                <ul>
+                    <li><a href="{% url rss_feeds "son-entriler" %}">son entriler</a></li>
+                    <li><a href="{% url rss_feeds "son-yorumlar" %}">son yorumlar</a></li>
+                </ul>
+            </li>
+            <li>
+                <h1>fakat?</h1>
+                <p>blog'dur bu evet, weblog, ortaya karışık yazarız buraya. her aklımızdan geçen olmasa da, en ilginçlerinin burada bulunacağı kesindir, hayaller, rüyalar, gorüşler, gorüşemeyenler, eleştiriler ve avuntular, hayatımızdan kesitler, bir portakalın dilimleri gibi, leziz ve bol vitaminli. önce okuyunuz, sonra çiğneyerek yutunuz, budur.</p>
+            </li>
+            <li>
+                <h1>nasıl?</h1>
+                <p>oturulup günlerce kod yazılır, üşenmeden fasiliteler eklenir, ortaya yeni fikirler atılır, yapılır da yapılır. blogun ilk versiyonu bir apple emac üzerinde hazırlanmıştı, daha sonraki versiyonuysa bir powerbook g4 üzerinde tamamlandı. şu an yayında olan, son versiyon sevgili macbook pro'mda yazıldı. hepsinin yeri ayrıdır tabi.</p>
+            </li>
+        </ul>
     </div>
 
 </body>

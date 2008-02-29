@@ -1,4 +1,5 @@
-<h2>yorum yazasın<a name="yorum-ekle" class="anchor"></a></h2>
+<a name="yorum-ekle" class="anchor"></a>
+<h2>yorum yazasın</h2>
 
 <form id="CommentSubmitForm" method="post" action="{% url comment_submit post.slug %}">
     {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}

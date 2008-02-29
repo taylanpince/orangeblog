@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
+from tools.utils import mark_lookups
 from entries.managers import PostManager, CategoryManager
 
 from markdown import markdown
@@ -19,6 +20,9 @@ class Category(models.Model):
     
     admin_objects = models.Manager()
     objects = CategoryManager()
+    
+    def get_rss_url(self):
+        return "kategoriler/%s" % self.slug
     
     @permalink
     def get_absolute_url(self):
@@ -68,13 +72,16 @@ class Post(models.Model):
         return self.category.rated
     rated = property(is_rated)
     
+    def get_rss_url(self):
+        return "entriler/%s" % self.slug
+    
     @permalink
     def get_absolute_url(self):
         return ('post_detail', (), {'slug': self.slug})
     
     def save(self):
         self.slug = slugify(self.title)
-        self.content = markdown(self.content_md)
+        self.content = markdown(mark_lookups(self.content_md))
         
         super(Post, self).save()
     

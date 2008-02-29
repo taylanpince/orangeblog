@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
+{% block rss %}<link rel="alternate" href="{% url rss_feeds category.get_rss_url %}" type="application/rss+xml" title="{{ category.name }} kategorisindeki son entriler" />{% endblock %}
+
 {% block content %}
 
 <h1>{{ category.name }}{% if category.num_entries %} ({{ category.num_entries }}){% endif %}</h1>
 
+{% if posts %}
 <ul id="PostList">
     {% for post in posts %}
     <li>
@@ -20,5 +23,8 @@
     </li>
     {% endfor %}
 </ul>
+{% else %}
+<p>bu kategoriye daha kimse yazmamış, yazık...</p>
+{% endif %}
 
 {% endblock %}

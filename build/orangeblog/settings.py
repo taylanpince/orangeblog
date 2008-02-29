@@ -24,6 +24,8 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 LOGIN_URL = "/giris/"
 LOGIN_REDIRECT_URL = "/"
 
+LOOKUP_URL = "/getur/"
+
 SECRET_KEY = 'v&v-_btxodw3-(p86j9l5g@w#^v8l8o$n*mvxxm@iiphrdgo%$'
 
 TEMPLATE_CONTEXT_PROCESSORS = (

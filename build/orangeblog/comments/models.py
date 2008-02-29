@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 from entries.models import Post
+from tools.utils import mark_lookups
 from comments.managers import CommentManager
 
 from markdown import markdown
@@ -23,8 +24,12 @@ class Comment(models.Model):
     admin_objects = models.Manager()
     objects = CommentManager()
     
+    @permalink
+    def get_absolute_url(self):
+        return ('post_detail', (), {'slug': self.post.slug})
+    
     def save(self):
-        self.content = markdown(self.content_md)
+        self.content = markdown(mark_lookups(self.content_md))
         
         super(Comment, self).save()
     

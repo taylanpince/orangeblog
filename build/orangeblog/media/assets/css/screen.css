@@ -32,7 +32,7 @@ h6 {
 h1 {
     font: 32px Georgia, "Century Schoolbook", Times, serif;
     color: #FFF;
-    margin: 0px 0px 15px 0px;
+    margin: 0px 0px 25px 0px;
 }
 
 h2 {
@@ -54,7 +54,7 @@ h3 {
 /* @group Text */
 
 p {
-	margin: 0px 0px 15px 0px;
+	margin: 0px 0px 18px 0px;
 }
 
 p.info {
@@ -98,10 +98,6 @@ q {
 }
 
 pre {
-	white-space: pre-wrap;
-	white-space: -moz-pre-wrap !important;
-	white-space: -pre-wrap;
-	white-space: -o-pre-wrap;
 	margin: 0px 0px 15px 0px;
 	font: 14px Georgia, "Century Schoolbook", Times, serif;
 	line-height: 22px;
@@ -122,6 +118,7 @@ div.hr {
     color: #FFB03B;
     text-align: center;
     letter-spacing: 12px;
+    margin: 0px 0px 18px 0px;
 }
 
 /* @end */
@@ -145,7 +142,25 @@ a:hover {
 }
 
 a.anchor {
-    visibility: hidden;
+    border: none;
+    line-height: 1px;
+    height: 1px;
+    padding: 0px;
+}
+
+a.rss {
+    float: right;
+    display: inline;
+    font: 11px "Lucida Grande", Helvetica, Arial, sans-serif;
+    color: #FFF;
+    border: none;
+    padding: 0px 0px 0px 14px;
+    background: transparent url("../images/icon-rss-small.png") 0px 2px no-repeat;
+}
+
+a.rss:hover {
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 /* @end */
@@ -166,7 +181,7 @@ ol {
 }
 
 ul.bullet {
-    padding: 10px 0px 0px 0px;
+    margin: 0px 0px 18px 0px;
 }
 
 ul.bullet li {
@@ -323,11 +338,6 @@ input.submit {
     height: 100px;
     height: auto !important;
     background: transparent url("../images/bg-footer.png") top left repeat-x;
-}
-
-#FooterWrapper {
-    width: 960px;
-    margin: 0px auto 0px auto;
 }
 
 /* @end */
@@ -519,6 +529,49 @@ ul#Navigation li {
 
 #DebugBox {
     display: none;
+}
+
+/* @end */
+
+
+/* @group Footer */
+
+#Footer h1 {
+    margin-bottom: 15px;
+}
+
+#Footer h1.rss {
+    background: transparent url("../images/icon-rss.png") 68px 14px no-repeat;
+}
+
+#FooterColumns {
+    width: 960px;
+    margin: 0px auto 0px auto;
+    padding: 30px 0px 20px 0px;
+    overflow: hidden;
+    position: static;
+}
+
+#FooterColumns li {
+    float: left;
+    display: inline;
+    width: 280px;
+    margin: 0px 60px 0px 0px;
+}
+
+#FooterColumns li.last-child {
+    margin-right: 0px;
+}
+
+#FooterColumns li li {
+    float: none;
+    display: block;
+    width: auto;
+    margin: 0px 0px 12px 0px;
+}
+
+#FooterColumns ul.bullet li {
+    background-image: url("../images/bullet-white.png");
 }
 
 /* @end */
