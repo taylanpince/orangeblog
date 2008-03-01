@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="link"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+
+<p>bu entriyi silmek istediğinden emin misin? bütün alakalı yorumlar da silinecek, ona göre!</p>
+
+<form id="PostDeleteForm" method="post" action="{% url post_delete post_slug %}">
+    {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}
+    {% if form.non_field_errors %}<p class="error">{{ form.non_field_errors|join:", "|lower }}</p>{% endif %}
+    <ul class="form">
+        {% for field in form %}
+        <li class="checkbox">
+            {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
+            {{ field }}
+            <label>{{ field.label|lower }}</label>
+        </li>
+        {% endfor %}
+        <li><input type="submit" value="sil gitsin" /></li>
+    </ul>
+</form>
+
+{% endblock %}

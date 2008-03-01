@@ -244,6 +244,16 @@ input.submit {
     padding: 2px 0px 0px 0px;
 }
 
+#Content ul.form li.checkbox label {
+    width: 400px;
+}
+
+#Content ul.form li input.checkbox {
+    float: left;
+    display: inline;
+    margin: 5px 15px 0px 0px;
+}
+
 #Content ul.form li input.text,
 #Content ul.form li input.file,
 #Content ul.form li textarea,
@@ -260,6 +270,10 @@ input.submit {
 #Content ul.form li p.error {
     clear: both;
     padding-left: 110px;
+}
+
+#Content ul.form li.checkbox p.error {
+    padding-left: 0px;
 }
 
 #Content ul.form li.submit {

@@ -44,3 +44,17 @@ class PostChangeForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ("category", "content_md")
+
+
+class PostDeleteForm(forms.Form):
+    """ Used to delete an entry """
+
+    confirm = forms.BooleanField(widget=forms.CheckboxInput(), label=_(u"I confirm that I want to delete this entry."))
+
+    def clean_confirm(self):
+        """ Validates that the user checked the confirm box """
+
+        if self.cleaned_data.get("confirm", False):
+            return self.cleaned_data["confirm"]
+
+        raise forms.ValidationError(_(u"You must check the confirmation box to delete this entry."))

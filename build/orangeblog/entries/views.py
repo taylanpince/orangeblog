@@ -13,7 +13,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from tools.utils import unslugify
 from entries.models import Category, Post
 from tools.pagination import make_url_pattern
-from entries.forms import PostTitleForm, PostSubmitForm, PostChangeForm
+from entries.forms import PostTitleForm, PostSubmitForm, PostChangeForm, PostDeleteForm
 
 
 def home(request):
@@ -186,20 +186,18 @@ def post_delete(request, slug):
     post = get_object_or_404(Post.objects, slug=slug)
 
     if request.method == "POST":
-        form = PostChangeForm(request.POST, prefix="PostChangeForm")
-
+        form = PostDeleteForm(request.POST, prefix="PostDeleteForm")
+        
         if form.is_valid():
-            post.category = form.cleaned_data["category"]
-            post.content_md = form.cleaned_data["content_md"]
-            post.save()
+            post.delete()
 
-            request.user.message_set.create(message=_("Your changes have been saved."))
+            request.user.message_set.create(message=_("Your entry has been deleted."))
 
-            return HttpResponseRedirect(reverse("post_detail", kwargs={"slug": post.slug}))
+            return HttpResponseRedirect(reverse("home"))
     else:
-        form = PostChangeForm(prefix="PostChangeForm", instance=post)
+        form = PostDeleteForm(prefix="PostDeleteForm")
 
-    return render_to_response("entries/post_change.html", {
+    return render_to_response("entries/post_delete.html", {
         "post" : post,
         "form" : form
     }, context_instance=RequestContext(request))

@@ -8,7 +8,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 
 from entries.models import Post
 from comments.models import Comment
-from comments.forms import CommentSubmitForm
+from comments.forms import CommentSubmitForm, CommentDeleteForm
 
 
 @login_required
@@ -41,12 +41,23 @@ def comment_delete(request, id):
     comment = get_object_or_404(Comment.objects, pk=id)
 
     if request.user.is_staff or (request.user is comment.user):
-        post = comment.post
-        comment.delete()
+        if request.method == "POST":
+            form = CommentDeleteForm(request.POST, prefix="CommentDeleteForm")
+            
+            if form.is_valid():
+                post = comment.post
+                comment.delete()
 
-        request.user.message_set.create(message=_("Your comment has been deleted."))
+                request.user.message_set.create(message=_("Your comment has been deleted."))
 
-        return HttpResponseRedirect(reverse("post_detail", kwargs={"slug": post.slug}))
+                return HttpResponseRedirect(reverse("post_detail", kwargs={"slug": post.slug}))
+        else:
+            form = CommentDeleteForm(prefix="CommentDeleteForm")
+        
+        return render_to_response("comments/comment_delete.html", {
+            "comment" : comment,
+            "form" : form
+        }, context_instance=RequestContext(request))
     else:
         request.user.message_set.create(message=_("You don't have permission to delete this comment."))
 

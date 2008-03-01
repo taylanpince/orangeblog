@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% with comment.post as post %}
+<h1 class="link"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+{% endwith %}
+
+<p>bu yorumu silmek istediğinden emin misin? sonradan zırlama.</p>
+
+<form id="CommentDeleteForm" method="post" action="{% url comment_delete comment.id %}">
+    {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}
+    {% if form.non_field_errors %}<p class="error">{{ form.non_field_errors|join:", "|lower }}</p>{% endif %}
+    <ul class="form">
+        {% for field in form %}
+        <li class="checkbox">
+            {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
+            {{ field }}
+            <label>{{ field.label|lower }}</label>
+        </li>
+        {% endfor %}
+        <li><input type="submit" value="sil gitsin" /></li>
+    </ul>
+</form>
+
+{% endblock %}
