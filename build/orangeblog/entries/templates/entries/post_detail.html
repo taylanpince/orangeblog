@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 
+{% load post_utils %}
 {% load comment_utils %}
 
 {% block rss %}<link rel="alternate" href="{% url rss_feeds post.get_rss_url %}" type="application/rss+xml" title="{{ post.title }} entrisindeki yorumlar" />{% endblock %}
@@ -10,9 +11,12 @@
 
 {{ post.content|safe }}
 
+{% show_post_controls user post %}
+
 <p class="info">
     {% with post.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.nickname }}</a>, {% endwith %}
-    {{ post.post_date|date:"j F Y, G:i" }}
+    {{ post.post_date|date:"j F Y, G:i" }}, 
+    {% with post.category as cat %}<a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>{% endwith %}
 </p>
 
 {% if post.num_comments %}
@@ -20,13 +24,15 @@
 <hr />
 
 <a name="yorumlar" class="anchor"></a>
-<h2>yorumlar</h2>
+<h2>yorumlar <span class="small">({{ post.num_comments }})</span></h2>
 
 <ul id="CommentList">
     {% for comment in post.comment_set.all %}
     <li>
         <a name="yorum-{{ comment.id }}" class="anchor"></a>
         {{ comment.content|safe }}
+        
+        {% show_comment_controls user comment %}
         
         <p class="info">
             {% with comment.user.get_profile as user_profile %}<a href="{{ user_profile.get_absolute_url }}">{{ user_profile.nickname }}</a>, {% endwith %}

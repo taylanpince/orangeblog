@@ -1,0 +1,6 @@
+{% if enable_edit or enable_delete %}
+<ul class="controls">
+    {% if enable_edit %}<li><a href="{% url comment_change comment.id %}">değiştir</a></li>{% endif %}
+    {% if enable_delete %}<li><a href="{% url comment_delete comment.id %}">sil</a></li>{% endif %}
+</ul>
+{% endif %}

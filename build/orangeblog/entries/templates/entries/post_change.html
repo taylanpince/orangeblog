@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="link"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+
+<form id="PostChangeForm" method="post" action="{% url post_change post_slug %}">
+    {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}
+    {% if form.non_field_errors %}<p class="error">{{ form.non_field_errors|join:", "|lower }}</p>{% endif %}
+    <ul class="form">
+        {% for field in form %}
+        <li>
+            {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
+            <label>{{ field.label|lower }}</label>
+            {{ field }}
+        </li>
+        {% endfor %}
+        <li class="submit"><input type="submit" value="hakkın budur" /></li>
+    </ul>
+</form>
+
+{% endblock %}

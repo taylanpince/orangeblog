@@ -8,11 +8,12 @@ from django.utils.translation import ugettext as _
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import ObjectPaginator, InvalidPage
 from django.shortcuts import render_to_response, get_object_or_404
+from django.contrib.admin.views.decorators import staff_member_required
 
 from tools.utils import unslugify
 from entries.models import Category, Post
 from tools.pagination import make_url_pattern
-from entries.forms import PostTitleForm, PostSubmitForm
+from entries.forms import PostTitleForm, PostSubmitForm, PostChangeForm
 
 
 def home(request):
@@ -143,4 +144,62 @@ def post_submit(request, slug):
         "form" : form,
         "post_slug" : slug,
         "related_posts" : related_posts
+    }, context_instance=RequestContext(request))
+
+
+@login_required
+def post_change(request, slug):
+    """ Changes an existing post """
+    
+    post = get_object_or_404(Post.objects, slug=slug)
+    
+    if request.user.is_staff or (request.user is post.user):
+        if request.method == "POST":
+            form = PostChangeForm(request.POST, prefix="PostChangeForm")
+        
+            if form.is_valid():
+                post.category = form.cleaned_data["category"]
+                post.content_md = form.cleaned_data["content_md"]
+                post.save()
+            
+                request.user.message_set.create(message=_("Your changes have been saved."))
+            
+                return HttpResponseRedirect(reverse("post_detail", kwargs={"slug": post.slug}))
+        else:
+            form = PostChangeForm(prefix="PostChangeForm", instance=post)
+    
+        return render_to_response("entries/post_change.html", {
+            "post" : post,
+            "form" : form
+        }, context_instance=RequestContext(request))
+    else:
+        request.user.message_set.create(message=_("You don't have permission to delete this entry."))
+        
+        return HttpResponseRedirect(reverse("post_detail", kwargs={"slug": post.slug}))
+
+
+@login_required
+@staff_member_required
+def post_delete(request, slug):
+    """ Deletes an existing post """
+
+    post = get_object_or_404(Post.objects, slug=slug)
+
+    if request.method == "POST":
+        form = PostChangeForm(request.POST, prefix="PostChangeForm")
+
+        if form.is_valid():
+            post.category = form.cleaned_data["category"]
+            post.content_md = form.cleaned_data["content_md"]
+            post.save()
+
+            request.user.message_set.create(message=_("Your changes have been saved."))
+
+            return HttpResponseRedirect(reverse("post_detail", kwargs={"slug": post.slug}))
+    else:
+        form = PostChangeForm(prefix="PostChangeForm", instance=post)
+
+    return render_to_response("entries/post_change.html", {
+        "post" : post,
+        "form" : form
     }, context_instance=RequestContext(request))

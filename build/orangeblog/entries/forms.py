@@ -36,3 +36,11 @@ class PostSubmitForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ("title", "category", "content_md")
+
+
+class PostChangeForm(forms.ModelForm):
+    """ Used to change an existing post """
+
+    class Meta:
+        model = Post
+        fields = ("category", "content_md")

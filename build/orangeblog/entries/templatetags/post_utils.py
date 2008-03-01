@@ -41,3 +41,20 @@ def post_title_form():
     """ Renders the post title form """
     
     return {'form': PostTitleForm(prefix="PostTitleForm")}
+
+
+@register.inclusion_tag("entries/post_controls.html")
+def show_post_controls(user, post):
+    """ Renders the post controls """
+    
+    enable_edit = False
+    enable_delete = False
+    
+    if user.is_authenticated():
+        if user.is_staff:
+            enable_edit = True
+            enable_delete = True
+        elif user is post.user:
+            enable_edit = True
+    
+    return {'post': post, 'enable_edit': enable_edit, 'enable_delete': enable_delete}

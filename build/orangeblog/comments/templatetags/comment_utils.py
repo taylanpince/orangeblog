@@ -22,3 +22,20 @@ def recent_comments():
     comments = Comment.objects.order_by("-post_date")[:10]
 
     return {'comments': comments}
+
+
+@register.inclusion_tag("comments/comment_controls.html")
+def show_comment_controls(user, comment):
+    """ Renders the comment controls """
+
+    enable_edit = False
+    enable_delete = False
+
+    if user.is_authenticated():
+        if user.is_staff:
+            enable_edit = True
+            enable_delete = True
+        elif user is comment.user:
+            enable_edit = True
+
+    return {'comment': comment, 'enable_edit': enable_edit, 'enable_delete': enable_delete}
