@@ -1,10 +1,12 @@
 sevgili {{ user.get_profile.nickname }},
 
-kısa süren bir aradan sonra, bugün orangeblog yayın hayatına geri döndü. hem arayüzü, hem de arkaplanı tamamen yenilendiği için, bazı özellikleri halen eksik olsa da, önümüzdeki birkaç hafta içerisinde tüm güzelliklerin ve daha fazlasının geleceğinden emin olabilirsin!
+kısa süren bir aradan sonra, orangeblog yayın hayatına geri dönüyor! hem arayüzü, hem de arkaplanı tamamen yenilendiği için, bazı özelliklerimiz şu anda aktif değil, ama önümüzdeki haftalarda eski atraksiyonlarımızın hepsi (ve daha fazlası!) yavaş yavaş kullanıma geçecek.
 
-geçiş sırasında şifreler sıfırlandığı için, aşağıdaki yeni şifrenle giriş yapabilirsin.
+malesef kullanıcıları aktarırken şifreleri sıfırlamak zorunda kaldım, aşağıdaki yeni şifrenle giriş yapabilirsin.
 
 kullanıcı: {{ user.username }}
 şifre: {{ new_password }}
+
+umarım yeni versiyon hoşuna gider!
 
 - taylan san

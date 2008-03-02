@@ -11,6 +11,8 @@
 	<link rel="alternate" href="{% url rss_feeds "son-entriler" %}" type="application/rss+xml" title="son entriler" />
 	<link rel="alternate" href="{% url rss_feeds "son-yorumlar" %}" type="application/rss+xml" title="son yorumlar" />
 	{% block rss %}{% endblock %}
+	
+	<link rel="shortcut icon" href="{{ MEDIA_URL }}assets/images/favicon.ico" />
 
 	<style type="text/css" media="all">
 	    @import "{{ MEDIA_URL }}assets/css/reset.css";

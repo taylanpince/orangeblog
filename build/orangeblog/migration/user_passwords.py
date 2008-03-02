@@ -12,12 +12,12 @@ from django.template import Context, loader
 from django.contrib.auth.models import User
 
 
-users = User.objects.filter(is_staff=True)
+users = User.objects.filter(is_staff=False)
 
 for user in users:
     new_pass = User.objects.make_random_password()
-    self.user.set_password(new_pass)
-    self.user.save()
+    user.set_password(new_pass)
+    user.save()
     
     body = loader.get_template("migration/launch_body.txt")
     subject = loader.get_template("migration/launch_subject.txt")
