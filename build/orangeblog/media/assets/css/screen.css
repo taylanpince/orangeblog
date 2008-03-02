@@ -461,6 +461,10 @@ ul#Navigation li {
     font-size: 16px;
 }
 
+#PostTitleForm input.inactive {
+    color: #CCC;
+}
+
 #Header #UserLoginForm {
     position: absolute;
     right: 0px;

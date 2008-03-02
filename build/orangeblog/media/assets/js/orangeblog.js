@@ -31,7 +31,7 @@ orangeBlog = {
 	init_title_form : function() {
 		if ($("#PostTitleForm").size() > 0) {
 			$("#PostTitleForm").submit(function() {
-				if ($(this).find("#id_PostTitleForm-title").val() == "") {
+				if ($(this).find("#id_PostTitleForm-title").val() == "" || $(this).find("#id_PostTitleForm-title").val() == "yeni entri başlığı") {
 					$(this).find("#id_PostTitleForm-title").focus();
 					core.messages.show_message("başlık girsene önce evladım...", true);
 					return false;
@@ -41,6 +41,10 @@ orangeBlog = {
 					return false;
 				} else {
 					return true;
+				}
+			}).find("#id_PostTitleForm-title").addClass("inactive").val("yeni entri başlığı").focus(function() {
+				if ($(this).val() == "yeni entri başlığı") {
+					$(this).val("").removeClass("inactive");
 				}
 			});
 		}
