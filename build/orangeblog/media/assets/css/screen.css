@@ -81,6 +81,10 @@ p.error {
     color: #fff7b6;
 }
 
+p.help {
+    font-size: 10px;
+}
+
 ul.form li p.error {
     margin-bottom: 2px;
 }
@@ -299,6 +303,12 @@ input.submit {
 #Content ul.form li p.error {
     clear: both;
     padding-left: 110px;
+}
+
+#Content ul.form li p.help {
+    clear: both;
+    padding-left: 110px;
+    margin-bottom: 0px;
 }
 
 #Content ul.form li.checkbox p.error {

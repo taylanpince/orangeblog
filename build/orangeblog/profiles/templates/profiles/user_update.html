@@ -23,6 +23,7 @@
             {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
             <label>{{ field.label|lower }}</label>
             {{ field }}
+            {% if field.help_text %}<p class="help">{{ field.help_text }}</p>{% endif %}
         </li>
         {% endfor %}
         <li class="submit"><input type="submit" value="ortamlara akalım hacı" /></li>
