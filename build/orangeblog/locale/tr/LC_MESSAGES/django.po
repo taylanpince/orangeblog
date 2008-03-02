@@ -87,7 +87,6 @@ msgid "Your comment has been posted."
 msgstr "yorum eklendi, hadi yine iyisin."
 
 #: comments/views.py:51
-#, fuzzy
 msgid "Your comment has been deleted."
 msgstr "yorumun silindi, geçmiş olsun."
 
@@ -96,9 +95,8 @@ msgid "You don't have permission to delete this comment."
 msgstr "bu yorumu silmek için yetkin yok"
 
 #: comments/views.py:80
-#, fuzzy
 msgid "Your comment has been updated."
-msgstr "yorum eklendi, hadi yine iyisin."
+msgstr "yorumun güncellendi."
 
 #: comments/views.py:91
 msgid "You don't have permission to modify this comment."
@@ -173,21 +171,18 @@ msgid "Your entry has been posted."
 msgstr "entrin kaydedildi, gazan mübarek olsun."
 
 #: entries/views.py:163
-#, fuzzy
 msgid "Your changes have been saved."
-msgstr "yorum eklendi, hadi yine iyisin."
+msgstr "değişiklikler kaydedildi, tamamdır."
 
 #: entries/views.py:174
 msgid "You don't have permission to modify this entry."
 msgstr "bu entriyi değiştirmek için yetkin yok!"
 
 #: entries/views.py:192
-#, fuzzy
 msgid "Your entry has been deleted."
-msgstr "entrin kaydedildi, gazan mübarek olsun."
+msgstr "entrin silindi, geçmiş olsun."
 
 #: profiles/forms.py:14
-#, fuzzy
 msgid "Username"
 msgstr "kullanıcı"
 
@@ -212,7 +207,6 @@ msgid "current password"
 msgstr "şifre"
 
 #: profiles/forms.py:63
-#, fuzzy
 msgid "new password"
 msgstr "yeni şifre"
 
@@ -233,9 +227,8 @@ msgid "There are no users registered with the email address you entered."
 msgstr "girdiğin email adresiyle kayıtlı bir kullanıcı bulunamadı."
 
 #: profiles/forms.py:106
-#, fuzzy
 msgid "Your password has been reset"
-msgstr "entrin kaydedildi, gazan mübarek olsun."
+msgstr "şifren sıfırlandı evladım."
 
 #: profiles/models.py:18
 msgid "Nickname"
@@ -258,14 +251,12 @@ msgid "User Profiles"
 msgstr "kullanıcı profilleri"
 
 #: profiles/views.py:38
-#, fuzzy
 msgid "Your profile settings have been updated."
-msgstr "yorum eklendi, hadi yine iyisin."
+msgstr "bilgilerin güncellendi evladım."
 
 #: profiles/views.py:62
-#, fuzzy
 msgid "Your password has been changed."
-msgstr "entrin kaydedildi, gazan mübarek olsun."
+msgstr "şifren değişti, geçmiş olsun."
 
 #: profiles/views.py:100
 msgid "Welcome back!"
