@@ -38,7 +38,7 @@ def generate_avatar(sender, instance, signal, *args, **kwargs):
                 avatar = avatar.resize((120, (120 * avatar.size[1] / avatar.size[0])), Image.ANTIALIAS)
                 avatar = avatar.crop((0, 0, 120, 120))
             else:
-                avatar.resize((120, 120), Image.ANTIALIAS)
+                avatar = avatar.resize((120, 120), Image.ANTIALIAS)
             
             # Large Avatar
             image_path = os.path.join(settings.MEDIA_ROOT, 'dynamic', 'users', ( instance.slug + '.jpg' ) )
