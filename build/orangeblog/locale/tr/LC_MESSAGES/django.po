@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-29 15:19-0500\n"
+"POT-Creation-Date: 2008-03-02 15:47-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,9 +16,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:79
+#: settings.py:84
 msgid "Turkish"
 msgstr "türkçe"
+
+#: comments/forms.py:18
+msgid "I confirm that I want to delete this comment."
+msgstr "evet abi, sil bu yorumu"
+
+#: comments/forms.py:26
+msgid "You must check the confirmation box to delete this comment."
+msgstr "silmek için onay vermek gerekiyor."
 
 #: comments/models.py:16 entries/models.py:57
 msgid "Author"
@@ -49,28 +57,28 @@ msgstr "tarih"
 msgid "Last Update"
 msgstr "son güncelleme"
 
-#: comments/models.py:48 comments/models.py:59
+#: comments/models.py:47 comments/models.py:58
 msgid "Comment"
 msgstr "yorum"
 
-#: comments/models.py:49
+#: comments/models.py:48
 msgid "Comments"
 msgstr "yorumlar"
 
-#: comments/models.py:60 entries/models.py:115 entries/models.py:135
-#: profiles/models.py:13
+#: comments/models.py:59 entries/models.py:115 entries/models.py:135
+#: profiles/models.py:17
 msgid "User"
 msgstr "kullanıcı"
 
-#: comments/models.py:61 entries/models.py:116
+#: comments/models.py:60 entries/models.py:116
 msgid "Rating"
 msgstr ""
 
-#: comments/models.py:68
+#: comments/models.py:67
 msgid "Comment Rating"
 msgstr ""
 
-#: comments/models.py:69
+#: comments/models.py:68
 msgid "Comment Ratings"
 msgstr ""
 
@@ -78,9 +86,35 @@ msgstr ""
 msgid "Your comment has been posted."
 msgstr "yorum eklendi, hadi yine iyisin."
 
-#: entries/forms.py:30
+#: comments/views.py:51
+#, fuzzy
+msgid "Your comment has been deleted."
+msgstr "yorum eklendi, hadi yine iyisin."
+
+#: comments/views.py:62
+msgid "You don't have permission to delete this comment."
+msgstr "bu yorumu silmek için yetkin yok"
+
+#: comments/views.py:80
+#, fuzzy
+msgid "Your comment has been updated."
+msgstr "yorum eklendi, hadi yine iyisin."
+
+#: comments/views.py:91
+msgid "You don't have permission to modify this comment."
+msgstr "bu yorumu değiştirme yetkin yok"
+
+#: entries/forms.py:33
 msgid "This title is already taken."
 msgstr "bu başlık daha önce kullanılmış, olmadı."
+
+#: entries/forms.py:52
+msgid "I confirm that I want to delete this entry."
+msgstr "bu entriyi sil gitsin abi"
+
+#: entries/forms.py:60
+msgid "You must check the confirmation box to delete this entry."
+msgstr "silmek için onay vermen gerekiyor."
 
 #: entries/models.py:16
 msgid "Name"
@@ -134,54 +168,108 @@ msgstr ""
 msgid "Post Votes"
 msgstr ""
 
-#: entries/views.py:117
+#: entries/views.py:129
 msgid "Your entry has been posted."
 msgstr "entrin kaydedildi, gazan mübarek olsun."
 
-#: profiles/forms.py:8
+#: entries/views.py:163
+#, fuzzy
+msgid "Your changes have been saved."
+msgstr "yorum eklendi, hadi yine iyisin."
+
+#: entries/views.py:174
+msgid "You don't have permission to modify this entry."
+msgstr "bu entriyi değiştirmek için yetkin yok!"
+
+#: entries/views.py:192
+#, fuzzy
+msgid "Your entry has been deleted."
+msgstr "entrin kaydedildi, gazan mübarek olsun."
+
+#: profiles/forms.py:14
 #, fuzzy
 msgid "Username"
 msgstr "kullanıcı"
 
-#: profiles/forms.py:9
+#: profiles/forms.py:15
 msgid "Password"
 msgstr "şifre"
 
-#: profiles/forms.py:21 profiles/forms.py:31
+#: profiles/forms.py:26 profiles/forms.py:36
 msgid ""
 "You could not be logged in with the e-mail address and password you "
 "specified."
 msgstr "girdiğin bilgilere sahip bir kullanıcı bulunamadı."
 
-#: profiles/forms.py:29
+#: profiles/forms.py:34
 msgid ""
 "This account is currently inactive. If you are a new member you will need to "
 "use the code in your activation email to activate your account."
 msgstr "hesabın henüz aktif değil, zırtapozluk yapma!"
 
-#: profiles/models.py:14
+#: profiles/forms.py:62
+msgid "current password"
+msgstr "şifre"
+
+#: profiles/forms.py:63
+#, fuzzy
+msgid "new password"
+msgstr "yeni şifre"
+
+#: profiles/forms.py:64
+msgid "new password (again)"
+msgstr "yeni şifre (tekrar)"
+
+#: profiles/forms.py:70
+msgid "You entered the wrong password."
+msgstr "yanlış şifre girdin."
+
+#: profiles/forms.py:74
+msgid "Please make sure that your new passwords match."
+msgstr "yeni şifrelerin uyuşmuyor, tekrar dene."
+
+#: profiles/forms.py:94
+msgid "There are no users registered with the email address you entered."
+msgstr "girdiğin email adresiyle kayıtlı bir kullanıcı bulunamadı."
+
+#: profiles/forms.py:106
+#, fuzzy
+msgid "Your password has been reset"
+msgstr "entrin kaydedildi, gazan mübarek olsun."
+
+#: profiles/models.py:18
 msgid "Nickname"
 msgstr "isim"
 
-#: profiles/models.py:16
+#: profiles/models.py:20
 msgid "Date of Birth"
 msgstr "doğum tarihi"
 
-#: profiles/models.py:17
+#: profiles/models.py:21
 msgid "Avatar"
 msgstr "fotoğraf"
 
-#: profiles/models.py:36
+#: profiles/models.py:52
 msgid "User Profile"
 msgstr "kullanıcı profili"
 
-#: profiles/models.py:37
+#: profiles/models.py:53
 msgid "User Profiles"
 msgstr "kullanıcı profilleri"
 
-#: profiles/views.py:45
+#: profiles/views.py:38
+#, fuzzy
+msgid "Your profile settings have been updated."
+msgstr "yorum eklendi, hadi yine iyisin."
+
+#: profiles/views.py:62
+#, fuzzy
+msgid "Your password has been changed."
+msgstr "entrin kaydedildi, gazan mübarek olsun."
+
+#: profiles/views.py:100
 msgid "Welcome back!"
 msgstr "hoşgeldiniz efendim, sefalar getirdiniz..."
 
 #~ msgid "E-mail"
-#~ msgstr "e-mail"
+#~ msgstr "email"
