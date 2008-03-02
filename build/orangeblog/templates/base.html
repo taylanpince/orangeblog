@@ -44,7 +44,7 @@
                 
                 {% with user.get_profile as user_profile %}
                 <div id="UserProfileBox">
-                    <a href="{% url user_info user_profile.slug %}">{{ user_profile.nickname }}</a> (<a href="{% url user_logout %}">çıkacam</a>)
+                    <a href="{% url user_info user_profile.slug %}">{{ user_profile.nickname }}</a> (<a href="{% url user_update %}">ince ayar</a>, <a href="{% url user_logout %}">çıkacam</a>)
                 </div>
                 {% endwith %}
                 

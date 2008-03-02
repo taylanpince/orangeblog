@@ -54,7 +54,7 @@ def show_post_controls(user, post):
         if user.is_staff:
             enable_edit = True
             enable_delete = True
-        elif user is post.user:
+        elif user == post.user:
             enable_edit = True
     
     return {'post': post, 'enable_edit': enable_edit, 'enable_delete': enable_delete}

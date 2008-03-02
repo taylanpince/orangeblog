@@ -4,6 +4,10 @@
 
 <h1>{{ profile.nickname }}</h1>
 
+{% if profile.avatar %}
+<img src="{{ profile.get_large_avatar_url }}" alt="{{ profile.nickname }}" class="right" />
+{% endif %}
+
 {% with profile.user as puser %}
 <ul class="bullet">
     <li><strong>{{ puser.date_joined|date:"j F Y" }}</strong> tarihinde orangeblog'a katılmış, en son <strong>{{ puser.last_login|date:"j F Y" }}</strong> tarihinde giriş yapmış.</li>

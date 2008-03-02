@@ -87,6 +87,7 @@ ul.form li p.error {
 
 span.small {
     font: 10px Georgia, "Century Schoolbook", Times, serif;
+    line-height: 18px;
 }
 
 h2 span.small {
@@ -129,6 +130,25 @@ div.hr {
     margin: 0px 0px 18px 0px;
 }
 
+img.right,
+img.left {
+    background-color: #FFB03B;
+}
+
+img.right {
+    float: right;
+    display: inline;
+    margin: 0px 0px 10px 10px;
+    padding: 3px;
+}
+
+img.left {
+    float: left;
+    display: inline;
+    margin: 0px 10px 10px 0px;
+    padding: 2px;
+}
+
 /* @end */
 
 
@@ -154,6 +174,15 @@ a.anchor {
     line-height: 1px;
     height: 1px;
     padding: 0px;
+}
+
+a.simple {
+    border: none;
+    padding: 0px;
+}
+
+a.simple:hover {
+    background-color: transparent;
 }
 
 a.rss {
@@ -450,6 +479,18 @@ ul#Navigation li {
     width: 292px;
 }
 
+#UserLoginForm li.submit a.forgot-password {
+    display: none;
+}
+
+#Header #UserLoginForm li.submit a.forgot-password {
+    float: left;
+    display: inline;
+    margin-left: 5px;
+    font-size: 10px;
+    border: none;
+}
+
 #Header #UserProfileBox {
     font-size: 11px;
     position: absolute;
@@ -552,6 +593,7 @@ h1.link a:hover {
 
 #MiddleColumn li,
 #SideColumn li {
+    clear: both;
     margin: 0px 0px 5px 0px;
 }
 
@@ -601,7 +643,7 @@ h1.link a:hover {
 }
 
 #Footer h1.rss {
-    background: transparent url("../images/icon-rss.png") 68px 14px no-repeat;
+    background: transparent url("../images/icon-rss.png") 66px 14px no-repeat;
 }
 
 #FooterColumns {

@@ -40,7 +40,7 @@ def comment_delete(request, id):
 
     comment = get_object_or_404(Comment.objects, pk=id)
 
-    if request.user.is_staff or (request.user is comment.user):
+    if request.user.is_staff or (request.user == comment.user):
         if request.method == "POST":
             form = CommentDeleteForm(request.POST, prefix="CommentDeleteForm")
             
@@ -70,13 +70,12 @@ def comment_change(request, id):
 
     comment = get_object_or_404(Comment.objects, pk=id)
 
-    if request.user.is_staff or (request.user is comment.user):
+    if request.user.is_staff or (request.user == comment.user):
         if request.method == "POST":
-            form = CommentSubmitForm(request.POST, prefix="CommentChangeForm")
+            form = CommentSubmitForm(request.POST, prefix="CommentChangeForm", instance=comment)
 
             if form.is_valid():
-                comment.content_md = form.cleaned_data["content_md"]
-                comment.save()
+                form.save()
 
                 request.user.message_set.create(message=_("Your comment has been updated."))
 

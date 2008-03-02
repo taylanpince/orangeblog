@@ -35,7 +35,8 @@ def show_comment_controls(user, comment):
         if user.is_staff:
             enable_edit = True
             enable_delete = True
-        elif user is comment.user:
+        elif user == comment.user:
             enable_edit = True
+            enable_delete = True
 
     return {'comment': comment, 'enable_edit': enable_edit, 'enable_delete': enable_delete}

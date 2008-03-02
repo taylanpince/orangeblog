@@ -153,14 +153,12 @@ def post_change(request, slug):
     
     post = get_object_or_404(Post.objects, slug=slug)
     
-    if request.user.is_staff or (request.user is post.user):
+    if request.user.is_staff or (request.user == post.user):
         if request.method == "POST":
-            form = PostChangeForm(request.POST, prefix="PostChangeForm")
+            form = PostChangeForm(request.POST, prefix="PostChangeForm", instance=post)
         
             if form.is_valid():
-                post.category = form.cleaned_data["category"]
-                post.content_md = form.cleaned_data["content_md"]
-                post.save()
+                form.save()
             
                 request.user.message_set.create(message=_("Your changes have been saved."))
             
@@ -173,7 +171,7 @@ def post_change(request, slug):
             "form" : form
         }, context_instance=RequestContext(request))
     else:
-        request.user.message_set.create(message=_("You don't have permission to delete this entry."))
+        request.user.message_set.create(message=_("You don't have permission to modify this entry."))
         
         return HttpResponseRedirect(reverse("post_detail", kwargs={"slug": post.slug}))
 

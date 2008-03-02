@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response, get_object_or_404
 
 from profiles.models import UserProfile
-from profiles.forms import UserLoginForm
+from profiles.forms import UserLoginForm, UserProfileForm, UserForm, UserPasswordForm, UserPasswordResetForm
 
 
 def user_info(request, slug):
@@ -17,6 +17,57 @@ def user_info(request, slug):
     
     return render_to_response("profiles/user_info.html", {
         "profile" : profile
+    }, context_instance=RequestContext(request))
+
+
+@login_required
+def user_update(request):
+    """ User profile settings form """
+
+    user = request.user
+    profile = request.user.get_profile()
+    
+    if request.method == "POST":
+        user_form = UserForm(request.POST, instance=user, prefix="UserForm")
+        profile_form = UserProfileForm(request.POST, request.FILES, instance=profile, prefix="UserProfileForm")
+        
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            
+            request.user.message_set.create(message=_("Your profile settings have been updated."))
+            
+            return HttpResponseRedirect(profile.get_absolute_url())
+    
+    else:
+        user_form = UserForm(instance=user, prefix="UserForm")
+        profile_form = UserProfileForm(instance=profile, prefix="UserProfileForm")
+
+    return render_to_response("profiles/user_update.html", {
+        "user_form" : user_form,
+        "profile_form" : profile_form
+    }, context_instance=RequestContext(request))
+
+
+@login_required
+def user_password_update(request):
+    """ User password update form """
+
+    if request.method == "POST":
+        form = UserPasswordForm(request.user, request.POST, prefix="UserPasswordForm")
+
+        if form.is_valid():
+            form.save()
+            
+            request.user.message_set.create(message=_("Your password has been changed."))
+            
+            return HttpResponseRedirect(request.user.get_profile().get_absolute_url())
+
+    else:
+        form = UserPasswordForm(request.user, prefix="UserPasswordForm")
+
+    return render_to_response("profiles/user_password_update.html", {
+        "form" : form
     }, context_instance=RequestContext(request))
 
 
@@ -62,3 +113,21 @@ def user_login(request):
             "form" : UserLoginForm(prefix="UserLoginForm"),
             "login_page" : True
         }, context_instance=RequestContext(request))
+
+
+def user_password_reset(request):
+    """ User password reset form """
+
+    if request.method == "POST":
+        form = UserPasswordResetForm(request.POST, prefix="UserPasswordResetForm")
+        
+        if form.is_valid():
+            form.save()
+
+            return HttpResponseRedirect(reverse('user_password_reset_done'))
+    else:
+        form = UserPasswordResetForm(prefix="UserPasswordResetForm")
+    
+    return render_to_response("profiles/user_password_reset.html", {
+        "form" : form
+    }, context_instance=RequestContext(request))

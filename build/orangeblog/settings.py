@@ -7,6 +7,8 @@ ADMINS = (
     ('Taylan Pince', 'taylanpince@gmail.com'),
 )
 
+DEFAULT_FROM_EMAIL = 'taylan@orangeslices.net'
+
 MANAGERS = ADMINS
 
 TIME_ZONE = 'America/Chicago'
@@ -20,6 +22,9 @@ USE_I18N = True
 MEDIA_ROOT = os.path.join(os.path.realpath(os.path.dirname(__file__)), 'media/')
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/admin/'
+
+LARGE_AVATAR_URL = '/media/assets/images/avatar-large.jpg'
+SMALL_AVATAR_URL = '/media/assets/images/avatar-small.jpg'
 
 LOGIN_URL = "/giris/"
 LOGIN_REDIRECT_URL = "/"

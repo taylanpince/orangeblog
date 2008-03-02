@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>ince ayar</h1>
+
+<p>şifreni değiştirmek istiyorsan, <a href="{% url user_password_update %}">buraya tıkla</a>.
+
+<form id="UserUpdateForm" method="post" action="{% url user_update %}" enctype="multipart/form-data">
+    {% if user_form.errors or profile_form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}
+    {% if user_form.non_field_errors %}<p class="error">{{ user_form.non_field_errors|join:", " }}</p>{% endif %}
+    {% if profile_form.non_field_errors %}<p class="error">{{ profile_form.non_field_errors|join:", " }}</p>{% endif %}
+    <ul class="form">
+        {% for field in user_form %}
+        <li>
+            {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
+            <label>{{ field.label|lower }}</label>
+            {{ field }}
+        </li>
+        {% endfor %}
+        {% for field in profile_form %}
+        <li>
+            {% if field.errors %}<p class="error">{{ field.errors|join:", "|lower }}</p>{% endif %}
+            <label>{{ field.label|lower }}</label>
+            {{ field }}
+        </li>
+        {% endfor %}
+        <li class="submit"><input type="submit" value="ortamlara akalım hacı" /></li>
+    </ul>
+</form>
+
+{% endblock %}

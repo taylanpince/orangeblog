@@ -1,4 +1,8 @@
+import os
+from urlparse import urljoin
+
 from django.db import models
+from django.conf import settings
 from django.db.models import permalink
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
@@ -19,6 +23,18 @@ class UserProfile(models.Model):
     
     admin_objects = models.Manager()
     objects = ProfileManager()
+    
+    def get_small_avatar_url(self):
+        if self.avatar:
+            return urljoin(settings.MEDIA_URL, os.path.join('dynamic', 'users', (self.slug + '-small.jpg')))
+        else:
+            return urljoin(settings.MEDIA_URL, settings.SMALL_AVATAR_URL)
+    
+    def get_large_avatar_url(self):
+        if self.avatar:
+            return urljoin(settings.MEDIA_URL, os.path.join('dynamic', 'users', (self.slug + '.jpg')))
+        else:
+            return urljoin(settings.MEDIA_URL, settings.LARGE_AVATAR_URL)
     
     @permalink
     def get_absolute_url(self):
