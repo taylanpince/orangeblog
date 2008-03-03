@@ -35,8 +35,8 @@ for snapshot in snapshots:
         p = Post.objects.get(slug=slugify(snapshot["baslik"]))
         
         img = Image.open(os.path.join(LEGACY_PATH, snapshot["resim"]))
-        img.save(os.path.join(NEW_PATH, snapshot["resim"]))
-        img_path = os.path.join("files", "snapshots", snapshot["resim"])
+        img.save(os.path.join(NEW_PATH, snapshot["resim"].lower()))
+        img_path = os.path.join("files", "snapshots", snapshot["resim"].lower())
         
         s = Snapshot(post=p, user=u, image=img_path, post_date=datetime(pd[0], pd[1], pd[2], pd[3], pd[4], pd[5]))
         s.save()
