@@ -1,0 +1,6 @@
+{% if snapshot %}
+<h3>zırtapoz</h3>
+<ul id="Snapshots">
+<li><a href="{{ snapshot.post.get_absolute_url }}"><img src="{{ snapshot.get_snapshot_url }}" alt="{{ snapshot.post.title }}" /></a></li>
+</ul>
+{% endif %}

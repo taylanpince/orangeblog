@@ -714,3 +714,21 @@ h1.link a:hover {
 }
 
 /* @end */
+
+
+/* @group Snapshots */
+
+#Snapshots a {
+    border: none;
+    padding: 0px;
+}
+
+#Snapshots a:hover {
+    background: transparent;
+}
+
+#Snapshots img {
+    border: 3px solid #FFB03B;
+}
+
+/* @end */

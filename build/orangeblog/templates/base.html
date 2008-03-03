@@ -34,6 +34,7 @@
 {% load post_utils %}
 {% load profile_utils %}
 {% load comment_utils %}
+{% load snapshot_utils %}
 
 <body>
 
@@ -87,6 +88,7 @@
                 </div>
                 
                 <div id="SideColumn">
+                    {% show_random_snapshot %}
                     {% category_links %}
                     {% active_users %}
                 </div>
