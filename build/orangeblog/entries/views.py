@@ -68,7 +68,7 @@ def category_detail(request, slug):
     except:
         posts = None
     
-    pager.url = make_url_pattern(reverse("home"), request.GET)
+    pager.url = make_url_pattern(reverse("category_detail", kwargs={"slug": slug}), request.GET)
     
     return render_to_response("entries/category_detail.html", {
         "category" : category,
