@@ -73,6 +73,7 @@ INSTALLED_APPS = (
     'orangeblog.profiles',
     'orangeblog.snapshots',
     'orangeblog.tools',
+    'orangeblog.aphorisms',
 )
 
 ugettext = lambda s: s

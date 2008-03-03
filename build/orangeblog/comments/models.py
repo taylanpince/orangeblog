@@ -46,6 +46,7 @@ class Comment(models.Model):
     class Meta:
         verbose_name = _("Comment")
         verbose_name_plural = _("Comments")
+        ordering = ["post_date"]
         permissions = (("can_post_comments", "Can post comments"), )
     
     def __unicode__(self):

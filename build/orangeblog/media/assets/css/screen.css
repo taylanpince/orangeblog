@@ -99,7 +99,12 @@ h2 span.small {
 }
 
 blockquote {
-	
+	font: 14px Georgia, "Century Schoolbook", Times, serif;
+	color: #CCC;
+	line-height: 18px;
+	background: transparent url("../images/quotes.png") top left no-repeat;
+	padding: 0px 0px 0px 24px;
+	font-style: italic;
 }
 
 q {
@@ -716,7 +721,11 @@ h1.link a:hover {
 /* @end */
 
 
-/* @group Snapshots */
+/* @group Snapshots and Aphorisms */
+
+#Snapshots {
+    margin-bottom: 10px !important;
+}
 
 #Snapshots a {
     border: none;
@@ -729,6 +738,20 @@ h1.link a:hover {
 
 #Snapshots img {
     border: 3px solid #FFB03B;
+}
+
+#Aphorism {
+    margin: 0px 0px 35px 0px;
+}
+
+#Aphorism p {
+    margin-bottom: 5px;
+}
+
+#Aphorism p.author {
+    font-size: 11px;
+    text-align: right;
+    padding-right: 5px;
 }
 
 /* @end */

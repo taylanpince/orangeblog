@@ -1,0 +1,6 @@
+{% if aphorism %}
+<div id="Aphorism">
+    <blockquote>{{ aphorism.content|linebreaks }}</blockquote>
+    <p class="author">- {{ aphorism.person }}</p>
+</div>
+{% endif %}

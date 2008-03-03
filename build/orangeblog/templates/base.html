@@ -35,6 +35,7 @@
 {% load profile_utils %}
 {% load comment_utils %}
 {% load snapshot_utils %}
+{% load aphorism_utils %}
 
 <body>
 
@@ -85,12 +86,13 @@
                 <div id="MiddleColumn">
                     {% todays_entries %}
                     {% recent_comments %}
+                    {% active_users %}
                 </div>
                 
                 <div id="SideColumn">
                     {% show_random_snapshot %}
+                    {% show_random_aphorism %}
                     {% category_links %}
-                    {% active_users %}
                 </div>
                 
             </div>
