@@ -11,9 +11,7 @@ DEFAULT_FROM_EMAIL = 'taylan@orangeslices.net'
 
 MANAGERS = ADMINS
 
-TIME_ZONE = 'Europe/Istanbul'
-
-LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'Turkey'
 
 SITE_ID = 1
 

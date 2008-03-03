@@ -101,6 +101,6 @@ class UserPasswordResetForm(forms.Form):
         self.user.save()
         
         t = loader.get_template(email_template)
-        c = {"new_password": new_pass, "user": user}
+        c = {"new_password": new_pass, "user": self.user}
         
         EmailMessage(subject=_("Your password has been reset"), body=t.render(Context(c)), to=[user.email]).send()
