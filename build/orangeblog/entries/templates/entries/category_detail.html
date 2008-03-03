@@ -2,6 +2,7 @@
 
 {% load pagination_utils %}
 
+{% block title %}{{ category.name }}{% endblock %}
 {% block rss %}<link rel="alternate" href="{% url rss_feeds category.get_rss_url %}" type="application/rss+xml" title="{{ category.name }} kategorisindeki son entriler" />{% endblock %}
 
 {% block content %}

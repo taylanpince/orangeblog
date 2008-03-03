@@ -3,6 +3,7 @@
 {% load post_utils %}
 {% load comment_utils %}
 
+{% block title %}{{ post.title }}{% endblock %}
 {% block rss %}<link rel="alternate" href="{% url rss_feeds post.get_rss_url %}" type="application/rss+xml" title="{{ post.title }} entrisindeki yorumlar" />{% endblock %}
 
 {% block content %}
