@@ -11,7 +11,7 @@ DEFAULT_FROM_EMAIL = 'taylan@orangeslices.net'
 
 MANAGERS = ADMINS
 
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Istanbul'
 
 LANGUAGE_CODE = 'en-us'
 
