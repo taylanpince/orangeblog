@@ -24,3 +24,5 @@ for user in users:
     params = {"new_password": new_pass, "user": user}
     
     EmailMessage(subject=subject.render([]), body=body.render(Context(params)), to=[user.email]).send()
+
+    print "%s - %s" % (user.username, user.email)
