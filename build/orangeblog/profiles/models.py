@@ -45,7 +45,7 @@ class UserProfile(models.Model):
         super(UserProfile, self).save()
     
     class Admin:
-        list_display = ('user', 'nickname', )
+        list_display = ('user', 'nickname', 'birth_date', 'last_active', )
         search_fields = ('nickname', )
     
     class Meta:
