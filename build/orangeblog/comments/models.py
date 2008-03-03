@@ -14,7 +14,7 @@ class Comment(models.Model):
     """ A comment for a blog post """
     
     user = models.ForeignKey(User, verbose_name=_("Author"))
-    post = models.ForeignKey(Post, verbose_name=_("Post"))
+    post = models.ForeignKey(Post, raw_id_admin=True, verbose_name=_("Post"))
     content = models.TextField(_("HTML Content"), blank=True, editable=False)
     content_md = models.TextField(_("Content"))
     public = models.BooleanField(_("Public"), default=True)

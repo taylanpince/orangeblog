@@ -73,6 +73,7 @@ INSTALLED_APPS = (
     'orangeblog.entries',
     'orangeblog.comments',
     'orangeblog.profiles',
+    'orangeblog.snapshots',
     'orangeblog.tools',
 )
 
