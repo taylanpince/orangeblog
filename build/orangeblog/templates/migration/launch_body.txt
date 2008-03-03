@@ -10,3 +10,5 @@ kullanıcı: {{ user.username }}
 umarım yeni versiyon hoşuna gider!
 
 - taylan san
+
+ps. eğer bu mesajın birden fazla kopyasını aldıysan ben bir yerlerde sıçtım demektir, lütfen en son mesajdaki şifre ve kullanıcı ismini kullanarak giriş yap.
