@@ -215,7 +215,7 @@ a.rss:hover {
 /* @group Lists */
 
 ul {
-
+    
 }
 
 li {
@@ -230,10 +230,15 @@ ul.bullet {
     margin: 0px 0px 18px 0px;
 }
 
-ul.bullet li {
+ul.bullet li,
+#CommentList li ul li,
+#PostList li ul li,
+#CommentList li ol li,
+#PostList li ol li, {
     padding: 0px 0px 0px 18px;
     margin: 0px 0px 12px 0px;
     background: transparent url("../images/bullet.png") 0px 5px no-repeat;
+    border: none;
 }
 
 /* @end */
