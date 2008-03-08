@@ -10,7 +10,9 @@
 
 <h1 class="link"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
 
-{{ post.content|safe }}
+<div id="PostContent">
+    {{ post.content|safe }}
+</div>
 
 {% show_post_controls user post %}
 
