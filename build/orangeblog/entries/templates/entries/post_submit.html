@@ -13,9 +13,10 @@
     <li><a href="{% url post_detail related_post.slug %}">{{ related_post.title }}</a></li>
     {% endfor %}
 </ul>
+<p>illa ben yazacam bunu diyorsan, buyur al dükkan senin.</p>
+{% else %}
+<p>öyle bi başlık yok arkadaşım, kandırmışlar seni. illa ben yazacam bunu diyorsan, buyur al dükkan senin.</p>
 {% endif %}
-
-<p>ben yazacam bunu diyorsan, buyur al dükkan senin.</p>
 
 <form id="PostSubmitForm" method="post" action="{% url post_submit post_slug %}">
     {% if form.errors %}<p class="error">olmadı yavrucuğum, hatalar var.</p>{% endif %}

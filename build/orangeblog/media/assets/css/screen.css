@@ -32,7 +32,8 @@ h6 {
 h1 {
     font: 32px Georgia, "Century Schoolbook", Times, serif;
     color: #FFF;
-    margin: 0px 0px 25px 0px;
+    margin: 0px 0px 15px 0px;
+    line-height: 48px;
 }
 
 h2 {
