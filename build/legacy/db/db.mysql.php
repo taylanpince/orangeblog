@@ -3,9 +3,9 @@
 class DB 
 {
 	var $Hostname  = "localhost";
-	var $Username  = "orangeblog";
-	var $Password  = "o8FblEyCmN0d";
-	var $Database  = "orangeblog";
+	var $Username  = "root";
+	var $Password  = "root";
+	var $Database  = "orangeblog_legacy";
 	var $Connect;
     var $DBselect  = 1;
     var $ShowError = 0;
