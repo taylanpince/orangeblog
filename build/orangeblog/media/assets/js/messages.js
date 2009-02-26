@@ -4,7 +4,7 @@
 *	
 *	Requires jQuery library (http://www.jquery.com)
 *	
-*	Taylan Pince (taylanpince@gmail.com) - February 23, 2007
+*	Taylan Pince (taylanpince@gmail.com) - February 23, 2008
 */
 
 if (typeof core == 'undefined') core = new Object();
