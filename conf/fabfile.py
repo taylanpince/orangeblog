@@ -41,9 +41,9 @@ def deploy(hash="HEAD"):
     
     # Move the uploaded files directory from the active version to the new version, create a symlink
     run("mv $(remote_dir)/app/files $(remote_dir)/deploy/files")
-    run("cd $(remote_dir)/deploy/taylanpince/media; ln -s ../../files")
+    run("cd $(remote_dir)/deploy/orangeblog/media; ln -s ../../files")
     run("mv $(remote_dir)/app/dynamic $(remote_dir)/deploy/dynamic")
-    run("cd $(remote_dir)/deploy/taylanpince/media; ln -s ../../dynamic")
+    run("cd $(remote_dir)/deploy/orangeblog/media; ln -s ../../dynamic")
     
     # Remove the active version of the app and move the new one in its place
     run("rm -rf $(remote_dir)/app")
