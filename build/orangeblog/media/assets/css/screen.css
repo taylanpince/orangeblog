@@ -422,6 +422,7 @@ input.submit {
 #Header h1 {
     width: 400px;
     font-size: 72px;
+    line-height: 72px;
     margin: 0px 0px 12px 0px;
 }
 
