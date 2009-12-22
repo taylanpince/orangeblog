@@ -6,3 +6,4 @@ DATABASE_HOST = ''
 DATABASE_PORT = ''
 
 TIME_ZONE = 'Turkey'
+MEDIA_URL = 'http://media.orangeslices.net/'
